@@ -1,16 +1,14 @@
-import React from "react";
-import { Link } from "react-router-dom";
-
+import React, { useState } from "react";
+// node.js library that concatenates classes (strings)
+import classnames from "classnames";
+import Chart from "chart.js";
+import { Line, Bar } from "react-chartjs-2";
 // reactstrap components
 import {
   Badge,
   Card,
   CardHeader,
   CardFooter,
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
-  DropdownToggle,
   Media,
   Pagination,
   PaginationItem,
@@ -19,15 +17,64 @@ import {
   Table,
   Container,
   Row,
-  Button,
+  InputGroup,
+  InputGroupAddon,
+  InputGroupText,
+  Input,
+  Form,
+  FormGroup,
 } from "reactstrap";
+
 // core components
+import {
+  chartOptions,
+  parseOptions,
+  chartExample1,
+  chartExample2,
+} from "backend/variables/charts.js";
+
 import Header from "backend/components/Headers/Header.js";
 
-const UsersList = () => {
+const PersonalityTestResults = (props) => {
+  const [activeNav, setActiveNav] = useState(1);
+  const [chartExample1Data, setChartExample1Data] = useState("data1");
+
+  if (window.Chart) {
+    parseOptions(Chart, chartOptions());
+  }
+
+  const toggleNavs = (e, index) => {
+    e.preventDefault();
+    setActiveNav(index);
+    setChartExample1Data("data" + index);
+  };
   return (
     <>
-      <Header />
+      <div
+        className="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
+        style={{
+          minHeight: "300px",
+          backgroundImage:
+            "url(" +
+            require("../../assets/img/theme/tofcouv.png").default +
+            ")",
+          backgroundSize: "cover",
+          backgroundPosition: "center top",
+        }}
+      >
+        {/* Mask */}
+        <span className="mask bg-gradient-purple" />
+        {/* Header container */}
+        <Container className="d-flex align-items-center" fluid>
+          <Row></Row>
+        </Container>
+      </div>
+
+
+
+
+
+
       {/* Page content */}
       <Container className="mt--7" fluid>
         {/* Table */}
@@ -35,25 +82,37 @@ const UsersList = () => {
           <div className="col">
             <Card className="shadow">
               <CardHeader className="border-0">
-                <h3 className="mb-0">List of Users</h3>
-                {/* search bar */}
-                                    <div className="col text-right">
-                                        <Button color="default"
-                                            href="#pablo"
-                                            onClick={(e) => e.preventDefault()}
-                                            size="sm" ><Link to="/admin/addHr" style={{color:'white'}}>Add</Link></Button>
-                                    </div>
-                                    {/* search bar */}
+                <Row className="align-items-center">
+                  <div className="col">
+                    <h3 className="mb-0">PersonalityTestResults</h3>
+                  </div>
+                  {/* search bar */}
+                  <div className="col text-right">
+                    <Form className="navbar-search navbar-search-light mr-6 d-none d-md-flex ml-lg-auto">
+                      <FormGroup className="mb-0">
+                        <InputGroup className="input-group-alternative">
+                          <InputGroupAddon addonType="prepend">
+                            <InputGroupText>
+                              <i className="fas fa-search" />
+                            </InputGroupText>
+                          </InputGroupAddon>
+                          <Input placeholder="Search" type="text" />
+                        </InputGroup>
+                      </FormGroup>
+                    </Form>
+                  </div>
+                  {/* search bar */}
+                </Row>
               </CardHeader>
               <Table className="align-items-center table-flush" responsive>
                 <thead className="thead-light">
                   <tr>
                     <th scope="col">FirstName</th>
                     <th scope="col">LastName</th>
-                    <th scope="col">Role</th>
                     <th scope="col">date</th>
-                    <th scope="col">avatar</th>
-                    <th scope="col" />
+                    <th scope="col">Personality color</th>
+                    {/* <th scope="col">avatar</th>
+                    <th scope="col" /> */}
                   </tr>
                 </thead>
                 <tbody>
@@ -82,7 +141,7 @@ const UsersList = () => {
                     </th>
                     <td>Ichrak</td>
                     <td>
-                      <Badge color="" className="badge-dot mr-4">
+                      <Badge color="" className="date   ">
                         <i className="bg-warning" />
                         HR
                       </Badge>
@@ -99,44 +158,6 @@ const UsersList = () => {
                           />
                         </div>
                       </div>
-                    </td>
-                    <td className="text-right">
-                      <Button color="danger"
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                        size="sm" >Deactivate</Button>
-                      <UncontrolledDropdown>
-                        <DropdownToggle
-                          className="btn-icon-only text-light"
-                          href="#pablo"
-                          role="button"
-                          size="sm"
-                          color=""
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fas fa-ellipsis-v" />
-                        </DropdownToggle>
-                        <DropdownMenu className="dropdown-menu-arrow" right>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            delete
-                          </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            approve
-                          </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            disapprove
-                          </DropdownItem>
-                        </DropdownMenu>
-                      </UncontrolledDropdown>
                     </td>
                   </tr>
                   <tr>
@@ -182,44 +203,6 @@ const UsersList = () => {
                         </div>
                       </div>
                     </td>
-                    <td className="text-right">
-                      <Button color="danger"
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                        size="sm" >Deactivate</Button>
-                      <UncontrolledDropdown>
-                        <DropdownToggle
-                          className="btn-icon-only text-light"
-                          href="#pablo"
-                          role="button"
-                          size="sm"
-                          color=""
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fas fa-ellipsis-v" />
-                        </DropdownToggle>
-                        <DropdownMenu className="dropdown-menu-arrow" right>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            delete
-                          </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            approve
-                          </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            disapprove
-                          </DropdownItem>
-                        </DropdownMenu>
-                      </UncontrolledDropdown>
-                    </td>
                   </tr>
                   <tr>
                     <th scope="row">
@@ -261,44 +244,6 @@ const UsersList = () => {
                           />
                         </div>
                       </div>
-                    </td>
-                    <td className="text-right">
-                      <Button color="danger"
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                        size="sm" >Deactivate</Button>
-                      <UncontrolledDropdown>
-                        <DropdownToggle
-                          className="btn-icon-only text-light"
-                          href="#pablo"
-                          role="button"
-                          size="sm"
-                          color=""
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fas fa-ellipsis-v" />
-                        </DropdownToggle>
-                        <DropdownMenu className="dropdown-menu-arrow" right>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            delete
-                          </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            approve
-                          </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Something else here
-                          </DropdownItem>
-                        </DropdownMenu>
-                      </UncontrolledDropdown>
                     </td>
                   </tr>
                   <tr>
@@ -344,44 +289,6 @@ const UsersList = () => {
                         </div>
                       </div>
                     </td>
-                    <td className="text-right">
-                      <Button color="danger"
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                        size="sm" >Deactivate</Button>
-                      <UncontrolledDropdown>
-                        <DropdownToggle
-                          className="btn-icon-only text-light"
-                          href="#pablo"
-                          role="button"
-                          size="sm"
-                          color=""
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fas fa-ellipsis-v" />
-                        </DropdownToggle>
-                        <DropdownMenu className="dropdown-menu-arrow" right>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            delete
-                          </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            approve
-                          </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Something else here
-                          </DropdownItem>
-                        </DropdownMenu>
-                      </UncontrolledDropdown>
-                    </td>
                   </tr>
                   <tr>
                     <th scope="row">
@@ -424,44 +331,6 @@ const UsersList = () => {
                           />
                         </div>
                       </div>
-                    </td>
-                    <td className="text-right">
-                      <Button color="danger"
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                        size="sm" >Deactivate</Button>
-                      <UncontrolledDropdown>
-                        <DropdownToggle
-                          className="btn-icon-only text-light"
-                          href="#pablo"
-                          role="button"
-                          size="sm"
-                          color=""
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fas fa-ellipsis-v" />
-                        </DropdownToggle>
-                        <DropdownMenu className="dropdown-menu-arrow" right>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            delete
-                          </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            approve
-                          </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Something else here
-                          </DropdownItem>
-                        </DropdownMenu>
-                      </UncontrolledDropdown>
                     </td>
                   </tr>
                 </tbody>
@@ -528,4 +397,4 @@ const UsersList = () => {
   );
 };
 
-export default UsersList;
+export default PersonalityTestResults;

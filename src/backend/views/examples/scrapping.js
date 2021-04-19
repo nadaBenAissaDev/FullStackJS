@@ -1,6 +1,5 @@
 import React from "react";
 
-
 // reactstrap components
 import {
   Badge,
@@ -27,11 +26,8 @@ import {
   Input,
   Form,
   FormGroup,
-  
-
 } from "reactstrap";
 // core components
-
 
 const Tables = () => {
   return (
@@ -39,50 +35,53 @@ const Tables = () => {
       <div
         className="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
         style={{
-          minHeight: "400px",
+          minHeight: "200px",
           backgroundImage:
-          "url(" +
-          require("../../assets/img/theme/tofcouv.png").default +
-          ")",
+            "url(" +
+            require("../../assets/img/theme/tofcouv.png").default +
+            ")",
           backgroundSize: "cover",
           backgroundPosition: "center top",
         }}
       >
         {/* Mask */}
-        <span className="mask bg-gradient-default opacity-8" />
+        <span className="mask bg-gradient-default opacity-5" />
         {/* Header container */}
         <Container className="d-flex align-items-center" fluid>
-          <Row>
-          
-   
-          </Row>
+          <Row></Row>
         </Container>
       </div>
-      
-     
-            
-            {/* Page content */}
-      <Container className="mt--7" fluid>
-      <Form className="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
-            <FormGroup className="mb-0">
-              <InputGroup className="input-group-alternative">
-                <InputGroupAddon addonType="prepend">
-                  <InputGroupText>
-                    <i className="fas fa-search" />
-                  </InputGroupText>
-                </InputGroupAddon>
-                <Input placeholder="Search" type="text" />
-              </InputGroup>
-            </FormGroup>
-          </Form>
-          <br/>
+
+      {/* Page content */}
+      <Container className="mt--5" fluid>
         {/* Table */}
         <Row>
           <div className="col">
             <Card className="shadow">
               <CardHeader className="border-0">
-                <h3 className="mb-0">Card tables</h3>
+                <Row className="align-items-center">
+                  <div className="col">
+                    <h3 className="mb-0">Scrapping</h3>
+                  </div>
+                  {/* search bar */}
+                  <div className="col text-right">
+                    <Form className="navbar-search navbar-search-light mr-6 d-none d-md-flex ml-lg-auto">
+                      <FormGroup className="mb-0">
+                        <InputGroup className="input-group-alternative">
+                          <InputGroupAddon addonType="prepend">
+                            <InputGroupText>
+                              <i className="fas fa-search" />
+                            </InputGroupText>
+                          </InputGroupAddon>
+                          <Input placeholder="Search" type="text" />
+                        </InputGroup>
+                      </FormGroup>
+                    </Form>
+                  </div>
+                  {/* search bar */}
+                </Row>
               </CardHeader>
+
               <Table className="align-items-center table-flush" responsive>
                 <thead className="thead-light">
                   <tr>
@@ -112,9 +111,7 @@ const Tables = () => {
                           />
                         </a>
                         <Media>
-                          <span className="mb-0 text-sm">
-                            Amine Chiha
-                          </span>
+                          <span className="mb-0 text-sm">Amine Chiha</span>
                         </Media>
                       </Media>
                     </th>
@@ -277,9 +274,7 @@ const Tables = () => {
                           />
                         </a>
                         <Media>
-                          <span className="mb-0 text-sm">
-                            Ahlem Kacem
-                          </span>
+                          <span className="mb-0 text-sm">Ahlem Kacem</span>
                         </Media>
                       </Media>
                     </th>
@@ -605,9 +600,7 @@ const Tables = () => {
                           />
                         </a>
                         <Media>
-                          <span className="mb-0 text-sm">
-                          Alexander Smith
-                          </span>
+                          <span className="mb-0 text-sm">Alexander Smith</span>
                         </Media>
                       </Media>
                     </th>
@@ -764,14 +757,13 @@ const Tables = () => {
                           <img
                             alt="..."
                             src={
-                              require("../../assets/img/theme/team-4-800x800.jpg").default
+                              require("../../assets/img/theme/team-4-800x800.jpg")
+                                .default
                             }
                           />
                         </a>
                         <Media>
-                          <span className="mb-0 text-sm">
-                          Romina Hadid
-                          </span>
+                          <span className="mb-0 text-sm">Romina Hadid</span>
                         </Media>
                       </Media>
                     </th>
@@ -974,7 +966,6 @@ const Tables = () => {
             </Card>
           </div>
         </Row>
-         
       </Container>
     </>
   );
@@ -992,4 +983,4 @@ export default Tables;
                 <Input placeholder="Search" type="text" />
               </InputGroup>
             </FormGroup>
-          </Form> */ 
+          </Form> */

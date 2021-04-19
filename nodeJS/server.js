@@ -1,5 +1,7 @@
 const express = require('express');
 const cors = require('cors');
+const personality = require('./routes/personality');
+
 const mongoose = require('mongoose');
 
 require('dotenv').config();
@@ -14,7 +16,8 @@ app.use(express.json());
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true }
 );
-app.use('/api/auth', require('./routes/GUser/auth'));
+
+app.use('/api/quiz', personality);
 
 const connection = mongoose.connection;
 connection.once('open', () => {
