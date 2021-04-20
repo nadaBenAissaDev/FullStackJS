@@ -13,11 +13,11 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-const uri = process.env.ATLAS_URI;
-mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true }
+const uri = process.env.ATLAS_URI1;
+mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true , useUnifiedTopology: true }
 );
 
-app.use('/api/quiz', personality);
+app.use('/PersonalityTest', personality);
 
 const connection = mongoose.connection;
 connection.once('open', () => {
@@ -26,3 +26,7 @@ connection.once('open', () => {
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
 });
+
+
+//user
+app.use("/auth",require('./routes/GUser/auth'))
