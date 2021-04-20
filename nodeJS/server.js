@@ -29,4 +29,5 @@ app.listen(port, () => {
 
 
 //user
-app.use("/auth",require('./routes/GUser/auth'))
+const User = require('./routes/GUser/user');
+app.use("/user",User)
