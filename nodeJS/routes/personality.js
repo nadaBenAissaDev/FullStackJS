@@ -49,11 +49,11 @@ router.put('/update/:id', /*passport.authenticate('jwt-admin', { session: false 
     
     
     
-    //const { errors, isValid } = validateAddQuestion(req.body);
+    const { errors, isValid } = validateAddQuestion(req.body);
 
-    // if (!isValid) {
-    //     return res.status(400).json(errors);
-    // }
+    if (!isValid) {
+        return res.status(400).json(errors);
+    }
 
     const quiz = new PersonalityTest({
 
