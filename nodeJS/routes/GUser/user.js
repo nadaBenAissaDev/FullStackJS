@@ -64,6 +64,19 @@ router.post("/add", async (req, res) => {
 });
 
 
+// ---------------------------------   DEACTIVATE ACCOUNT   ---------------------------------
+router.route('/:id').post((req,res)=>{
+    User.findById(req.params.id)
+    .then(user=>{
+        user.activatedAccount = false;
+
+        user.save()
+        .then(()=>res.json('Account deactivated successfully.'))
+        .catch(err=>res.status(400).json('Error: '+err));
+    })
+    .catch(err=>res.status(400).json('Error: '+err));
+});
+
 
 // ---------------------------------   LOGIN: using json web token JWT   ---------------------------------
 
