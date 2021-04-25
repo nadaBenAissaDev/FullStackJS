@@ -41,7 +41,7 @@ const UsersList = () => {
                                         <Button color="default"
                                             href="#pablo"
                                             onClick={(e) => e.preventDefault()}
-                                            size="sm" ><Link to="/admin/addHr" style={{color:'white'}}>Add</Link></Button>
+                                            size="sm" ><Link to="/admin/addHr" style={{color:'white'}}>Add HR</Link></Button>
                                     </div>
                                     {/* search bar */}
               </CardHeader>
@@ -52,7 +52,7 @@ const UsersList = () => {
                     <th scope="col">LastName</th>
                     <th scope="col">Role</th>
                     <th scope="col">date</th>
-                    <th scope="col">avatar</th>
+                    <th scope="col"></th>
                     <th scope="col" />
                   </tr>
                 </thead>
