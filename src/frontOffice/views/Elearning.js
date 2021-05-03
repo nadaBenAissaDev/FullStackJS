@@ -25,7 +25,7 @@ const Elearning = () => {
                        
                         <div className="auth-Container">
                             <Link to="/play/instructions" className="btn-grad" id="login-B utton"> Skills Test</Link>
-                            <Link to="/register" className="btn-grad" id="signup-Button"> Personality Test</Link>
+                            <Link to="/personalityTest/instructions" className="btn-grad" id="signup-Button"> Personality Test</Link>
                         </div>
                     
                        

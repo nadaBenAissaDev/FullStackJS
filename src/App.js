@@ -37,7 +37,11 @@ import Test from './frontOffice/views/GSquiz/Test';
 import PersonalityTest from "frontOffice/views/GPersonalityTest/PersonalityTest";
 import TestInstructions from "frontOffice/views/GPersonalityTest/TestInstructions";
 import TestResult from "frontOffice/views/GPersonalityTest/TestResult";
-// Personality Test
+// CHATBOT
+import Chatbot from 'frontOffice/views/chatbot/Message';
+
+
+
 
 import Layout from "./frontOffice/Layouts/Layout";
 import Home from "./frontOffice/views/Home";
@@ -154,6 +158,9 @@ const App = () => {
                     path="/personalityTest/testResult"
                     component={TestResult}
                   ></Route>
+                  {/* Chatbot */}
+                  <Route  exact  path="/Chatbot" component={Chatbot}></Route>
+                  
                 </Switch>
               </div>
             </div>
