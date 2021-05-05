@@ -32,6 +32,7 @@ import personalityTestList from "backend/views/GPersonalityTest/ListPersonalityT
 import personalityTestDetail from "backend/views/GPersonalityTest/DetailsPersonalityTest";
 import AddPersonalityTest from "backend/views/GPersonalityTest/AddPersonalityTest";
 import AddHr from "backend/views/GPersonalityTest/AddHr";
+import Cv from "backend/views/Cv";
 
 /// skills test 
 
@@ -43,7 +44,6 @@ import UpdateQuestion from "backend/views/examples/skillstest/UpdateQuestion";
 import Result from "backend/views/examples/skillstest/Result";
 import mail from "backend/views/examples/skillstest/mail";
 import Profile from "backend/views/examples/Profile";
-
 
 
 
@@ -61,6 +61,12 @@ var routes = [
     name: "UsersList",
     icon: "ni ni-circle-08 text-purple",
     component: UsersList,
+    layout: "/admin",
+  },
+  {
+    path: "/Cv",
+    name: "Cv",
+    component: Cv,
     layout: "/admin",
   },
   {
