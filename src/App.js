@@ -18,6 +18,9 @@ import { Provider } from "react-redux";
 import store from "./store";
 import setAuthToken from "./utils/setAuthToken";
 
+//chatbot
+import Chatbot from 'frontOffice/views/chatbot/Message';
+
 //import './backend/assets/css/argon-dashboard-react.css';
 //import PostJob from 'frontOffice/views/PostJob';
 //import Sidebar from 'frontOffice/Layouts/Sidebar'; <Sidebar/>
@@ -52,6 +55,9 @@ import NewReclamation from "frontOffice/views/GReclamation/NewReclamation";
 //import Reclamations from 'frontOffice/views/Reclamations';
 import Reclamations from "frontOffice/views/GReclamation/Reclamations";
 
+//chatbot
+import CustomChatbot from "frontOffice/views/chatbot/CustomChatbot";
+import PDF from "frontOffice/views/GCv/PDF";
 if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
@@ -65,7 +71,7 @@ const App = () => {
       <div className="App">
         <BrowserRouter>
           <Fragment>
-            <Navbar />
+            {/* <Navbar /> */}
             <div id="content-wrapper" className="d-flex flex-column">
               <div id="content">
                 <Switch>
@@ -96,6 +102,11 @@ const App = () => {
                     exact
                     path="/DetailJob/:id"
                     component={DetailJob}
+                  ></Route>
+                  <Route
+                    exact
+                    path="/PDF"
+                    component={PDF}
                   ></Route>
                   <Route
                     exact
@@ -135,9 +146,11 @@ const App = () => {
                     path="/personalityTest/testResult"
                     component={TestResult}
                   ></Route>
+                  <Route  exact  path="/Chatbot" component={Chatbot}></Route>
                 </Switch>
               </div>
             </div>
+            <CustomChatbot/>
           </Fragment>
         </BrowserRouter>
       </div>

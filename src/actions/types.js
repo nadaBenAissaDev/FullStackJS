@@ -24,4 +24,5 @@ export const REMOVE_COMMENT = 'REMOVE_COMMENT';
 export const JOB_ACTIVATED ='JOB_ACTIVATED';
 export const JOB_DEACTIVATED ='JOB_DEACTIVATED';
 export const JOB_DELETED ='JOB_DELETED';
-
+export const ADD_CV ='ADD_CV';
+export const ERROR_ADD_CV ='ERROR_ADD_CV';

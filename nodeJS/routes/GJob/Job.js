@@ -36,7 +36,6 @@ async(req,res)=>{
     try{
     //récupérer le user connecté à partir un token
     const user = await User.findById(req.user.id).select('-password');
-    //test if user is HR
     if (user.role != 1){
         return res.status(401).json({msg: 'User not autorized'});
     }

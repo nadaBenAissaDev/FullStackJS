@@ -20,6 +20,7 @@ app.use('/api/register', require('./routes/GUser/register'));
 app.use('/api/Job', require('./routes/GJob/Job'));
 app.use('/api/JobHR', require('./routes/GJob/HR'));
 app.use('/api/JobAdmin', require('./routes/GJob/Admin'));
+app.use('/api/Cv', require('./routes/GCv/Cv'));
 
 //GReclamation 
 const reclamationRouter = require('./routes/GReclamation/reclamation');

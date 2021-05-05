@@ -100,7 +100,8 @@ export default function(state = initialState, action){
         case ADD_COMMENT:
             return {
                 ...state,
-                job: {...state.job, comments: payload},
+                //jobs: {...state.job, comments: payload},
+                jobs: state.jobs.map(job => job._id === payload.id ? {...job, comments: payload.comments} : job),
                 loading: false
             }
         case REMOVE_COMMENT:

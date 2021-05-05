@@ -25,8 +25,7 @@ const PostJob =({ addJob })=>  {
     contractType: '',
     location: '',
     requirements: [
-      { "text": "Anglais"},
-      { "text": "Français"}
+     
     ],
     skills: [
       {"title": "Symfony4"},
@@ -93,13 +92,6 @@ const PostJob =({ addJob })=>  {
                 <label><strong>Experience</strong></label>
                   <input type="text" className="form-control" name="studyLevel" placeholder="eg: 2-4 years" value={studyLevel} onChange={e=> onChange(e)}/>
                 </div>
-                <div className="form-group">
-                <label><strong>Description</strong></label>
-                <div className="md-form">
-                <i className="fas fa-pencil-alt prefix"></i>
-                <textarea id="form10" className="md-textarea form-control" rows="3" name="description" value={description} onChange={e=> onChange(e)}></textarea>
-              </div>
-                </div>
                 <label><strong>contract Type</strong></label>
                 <select className="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref"
                        value={contractType} onChange={e=> onChange(e)} name="contractType">
@@ -109,6 +101,21 @@ const PostJob =({ addJob })=>  {
                 <option value="Freelance">Freelance</option>
                 <option value="Traineeship">Traineeship</option>
                 </select>
+                <div className="form-group">
+                <label><strong>Description</strong></label>
+                <div className="md-form">
+                <i className="fas fa-pencil-alt prefix"></i>
+                <textarea id="form10" className="md-textarea form-control" rows="3" name="description" value={description} onChange={e=> onChange(e)}></textarea>
+              </div>
+                </div>
+                <div className="form-group">
+                <label><strong>Requirements</strong></label>
+                <div className="md-form">
+                <i className="fas fa-pencil-alt prefix"></i>
+                <textarea id="form10" className="md-textarea form-control" rows="3" name="description" value={description} onChange={e=> onChange(e)}></textarea>
+              </div>
+                </div>
+
  <button type="submit" className="btn btn-primary btn-block" >ADD</button>
                   <br/><br/>
         </form>

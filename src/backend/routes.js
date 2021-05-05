@@ -18,6 +18,8 @@ import PostJob from "backend/views/GJob/PostJob";
 import ListJobsNonApp from "backend/views/GJob/ListJobsNonApp";
 import UpdateJob from "backend/views/GJob/UpdateJob";
 
+//Cv
+import uploadCv from "backend/views/CvToText/UploadCv"
 
 //Reclamation
 import ListReclamations from "backend/views/GReclamation/ListReclamations.js"; 
@@ -72,6 +74,13 @@ var routes = [
     path: "/Ranking",
     name: "Ranking",
     component: Ranking,
+    layout: "/admin",
+  },
+  {
+    path: "/uploadCv",
+    name: "Upload Cvs",
+    icon: "ni ni-planet text-blue",
+    component: uploadCv,
     layout: "/admin",
   },
   {
@@ -134,25 +143,21 @@ var routes = [
   ,
   {
     path: "/jobDetails/:id", 
-    //name: "Job Details",
     component: JobDetails,
     layout: "/admin",
   },
   {
     path: "/jobAdDetails/:id", 
-    //name: "Job Details",
     component: JobAdDetails,
     layout: "/admin",
   },
   {
     path: "/activatedJobs",
-    //name: "activatedJobs",
     component: activatedJobs,
     layout: "/admin",
   },
   {
     path: "/deactivatedJobs",
-    //name: "deactivated Jobs",
     component: deactivatedJobs,
     layout: "/admin",
   },

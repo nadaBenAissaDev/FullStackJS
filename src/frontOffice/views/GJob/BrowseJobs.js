@@ -48,28 +48,28 @@ const BrowseJobs = ({getJobs, job: {jobs, loading}}) => {
             <div className="sidebar-box bg-white p-4 ftco-animate">
             <div className="col-md-12"><h3>Contract type</h3></div>
             <div className="col-md-12 mb-3 mb-md-0">
-              <label for="option-price-1">
-                <input type="checkbox" id="option-price-1"/> <span className="text-success"/>CDI<span/>
+              <label>
+                <input type="checkbox"  name="CDI"/> <span className="text-success"/>CDI<span/>
               </label>
             </div>
             <div className="col-md-12 mb-3 mb-md-0">
-              <label for="option-price-2">
-                <input type="checkbox" id="option-price-2"/> <span>Full-time</span>
+              <label>
+                <input type="checkbox" name="Full-time"/> <span>Full-time</span>
               </label>
             </div>
             <div className="col-md-12 mb-3 mb-md-0">
-              <label for="option-price-2">
-                <input type="checkbox" id="option-price-2"/> <span>Stage</span>
+              <label>
+                <input type="checkbox" name="Traineeship"/> <span>Traineeship</span>
               </label>
             </div>
             <div className="col-md-12 mb-3 mb-md-0">
-              <label for="option-price-2">
-                <input type="checkbox" id="option-price-2"/> <span>Freelance </span>
+              <label >
+                <input type="checkbox" name="Freelance"/> <span>Freelance </span>
               </label>
             </div>
             <div className="col-md-12 mb-3 mb-md-0">
-              <label for="option-price-2">
-                <input type="checkbox" id="option-price-2"/> <span>SIVP</span>
+              <label >
+                <input type="checkbox" name="SIVP"/> <span>SIVP</span>
               </label>
             </div>
             </div>

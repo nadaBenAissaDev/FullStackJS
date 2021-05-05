@@ -1,22 +1,18 @@
 import React, {useState} from 'react';
 import { Redirect } from "react-router-dom";
+import axios from 'axios';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addComment } from '../../../actions/job';
 
 const CommentForm = ({ jobId, addComment, isAuth }) => {
     const [text, setText] = useState ('');
- /*   if(!isAuth){
-            return <Redirect to='/Login'/>
-             }
-             isAuth ? (addComment(jobId, {text})) : (<Redirect to="/" />)
-*/
     const onSubmit = async e =>{
         e.preventDefault();
                 addComment(jobId, {text});  
                 setText('');
-    
     }
+    
     return (
         <div className="comment-form-wrap pt-4">
         <h3>Leave a comment</h3>

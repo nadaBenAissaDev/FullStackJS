@@ -38,18 +38,18 @@ router.get('/ActivatedJob', auth,
 async(req,res)=> {
     try{
         //récupérer le user connecté à partir un token
-        const user = await User.findById(req.user.id).select('-password');
-        //test if user is HR
-        if (user.role != 1){
-            return res.status(401).json({msg: 'User not autorized'});
-        }
+        // const user = await User.findById(req.user.id).select('-password');
+        // //test if user is HR
+        // if (user.role != 1){
+        //     return res.status(401).json({msg: 'User not autorized'});
+        // }
         const listJobs= await Job.find().sort({date: -1});
         //list Job Approved
         const listJobsApp = listJobs.filter(job=>job.approved === 1);
         //list Job activated
         const JobsAc = listJobsApp.filter(job=>job.activate === 1);
         //test if user created this Job
-        const listJobsAc = JobsAc.filter(job => job.user.toString() === req.user.id)
+        //const listJobsAc = JobsAc.filter(job => job.user.toString() === req.user.id)
         return res.json(listJobsAc);
     }
     catch(err){
@@ -67,9 +67,9 @@ async(req,res)=> {
         //récupérer le user connecté à partir un token
         const user = await User.findById(req.user.id).select('-password');
         //test if user is HR
-        if (user.role != 1){
-            return res.status(401).json({msg: 'User not autorized'});
-        }
+        // if (user.role != 1){
+        //     return res.status(401).json({msg: 'User not autorized'});
+        // }
         const listJobs= await Job.find().sort({date: -1});
         //list Job Approved
         const listJobsApp = listJobs.filter(job=>job.approved === 1);

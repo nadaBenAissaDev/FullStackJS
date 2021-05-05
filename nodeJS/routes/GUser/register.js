@@ -39,7 +39,7 @@ async(req,res) => {
         d: 'mm'
     });
     const company = "xxx";
-    const role = 0;
+    const role = 2;
     user = new User({firstname,lastname,email,avatar,password,company,role});
     
     //encrypt password
