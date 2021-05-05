@@ -31,7 +31,7 @@ import personalityTestResults from "backend/views/GPersonalityTest/personalityTe
 import personalityTestList from "backend/views/GPersonalityTest/ListPersonalityTest";
 import personalityTestDetail from "backend/views/GPersonalityTest/DetailsPersonalityTest";
 import AddPersonalityTest from "backend/views/GPersonalityTest/AddPersonalityTest";
-import AddHr from "backend/views/GPersonalityTest/AddHr";
+import AddHr from "backend/views/GUser/AddHr";
 import Cv from "backend/views/Cv";
 
 /// skills test 

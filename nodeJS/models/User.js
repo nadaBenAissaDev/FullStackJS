@@ -33,6 +33,7 @@ const UserSchema = new mongoose.Schema({
   },
   activatedAccount: {
     type: Boolean,
+    required: true,
   },
 });
 module.exports = User = mongoose.model("user", UserSchema);

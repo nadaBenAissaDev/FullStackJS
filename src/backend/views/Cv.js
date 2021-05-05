@@ -75,25 +75,15 @@ const Cv = () => {
             <Card className="shadow">
               <CardHeader className="border-0">
                 <h3 className="mb-0">List of Cv's</h3>
+                <br></br>
                 {/* search bar */}
                 <div className="col text-right">
-                  <Button
-                    style={{ backgroundColor: "orange" }}
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                    size="sm"
-                  >
-                    <Link to="/admin/addHr" style={{ color: "white" }}>
-                      Add HR
-                    </Link>
-                  </Button>
                   {/* <input
                       type="file"
                       id=""
                       value={msg.text}
                       onChange={(e) => this.handleChange({...msg, text: e.target.value})}
                       /> */}
-
                   <form className="container" onSubmit={(e) => onSubmit(e)}>
                     {/* <input type="text" className="form-control"
                                  value={msg.text}  placeholder="msg" onChange={e=> setMsg({...msg, text: e.target.value})}>
@@ -106,6 +96,8 @@ const Cv = () => {
                       value={msg.text}
                       onChange={(e) => onChange(e)}
                     />
+
+                    <br></br>
 
                     <Button
                       style={{ backgroundColor: "green" }}

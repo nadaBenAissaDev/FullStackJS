@@ -1,8 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // reactstrap components
 import {
   Badge,
+  Button,
   Card,
   CardHeader,
   CardFooter,
@@ -34,8 +36,20 @@ const UsersList = () => {
           <div className="col">
             <Card className="shadow">
               <CardHeader className="border-0">
-                <h3 className="mb-0">List of Users</h3>
-              </CardHeader>
+                    <h3 className="mb-0">Users List</h3>
+
+                    <div className="col text-right">
+                      <Button color="success" size="sm">
+                        <Link
+                          to="/admin/addHr"
+                          style={{ color: "white" }}
+                        >
+                          Add HR
+                        </Link>
+                      </Button>
+                    </div>
+                  </CardHeader>
+
               <Table className="align-items-center table-flush" responsive>
                 <thead className="thead-light">
                   <tr>

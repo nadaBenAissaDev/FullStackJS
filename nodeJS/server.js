@@ -30,7 +30,7 @@ app.use('/reclamation', reclamationRouter);
 app.use( '/user' ,userRouter);
 app.use('/calendar', calendarRouter);
 
-//
+//Personality test
 app.use('/personalityTest',require('./routes/GPersonalityTest/personality'));
 
 //skillstest 
