@@ -59,27 +59,45 @@ const Reclamation = props => (
     
  
    
+
+   
+      <td>
+  
+         <Button color="primary" type="button"   
+          size={'sm'}
+          onClick={() => { props.recommandationfct(props.todos._id) }} >
+          recomm
+        </Button>
+  </td>
+
    
     </tr>
+
+    
+
+    
   )
   
   
   
   
-  export default class ListUsers extends Component {
+  export default class recommandation extends Component {
   
     
     constructor(props) {
       super(props);
       console.log( props )
-
      
+
+    
+      
   
-      this.state = {result: [],
+      this.state = {result: [],   id:'',
       
       
       };
     }
+   
     componentDidMount() {
       axios.get("http://localhost:5000/users")
         .then(response => {
@@ -91,23 +109,69 @@ const Reclamation = props => (
         .catch((error) => {
           console.log(error);
         })
-
+        this.setState({id:JSON.stringify('6060a2d81e12dff4171615c0')})
+    
     }  
+
+     handleClick= async () => {
+      const id = "609087de6de5c07e7c172db3";
+       const profile = id;
+      
+      const response = await fetch("http://localhost:5000/rec/"+{id}, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(profile)
+      });
+
+      if (response.ok) {
+        console.log("response worked!");
+       
+       
+      }
+    }
+    recommandationfc(id) {
+      axios.post("http://localhost:5000/rec/"+{id})
+        .then(response => { console.log(response.data)});
+       // window.location = '/admin/ReclamationDetails';
+  
+    }
+   
+  recommandationfct(id) {
+   
+    axios.post("http://localhost:5000/rec/609087de6de5c07e7c172db3")
+      .then(response => { console.log(response.data)});
+     // window.location = '/admin/ReclamationDetails';
+
+  }
 
 
 
 
     reclamationList() {
        return this.state.result.map(currentresultat => {
-        return <Reclamation todos={currentresultat}/>;
+     
+
+        return <Reclamation todos={currentresultat}
+        
+        recommandationfct={this.recommandationfct}
+        />;
       })
     }
+
+  
+
     render() {  
  
        const { resultat } = this.props;
   
       return (
         <>
+
+
+
+  
        <div className="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
         style={{
           minHeight: "400px",
