@@ -1,4 +1,8 @@
 // import './frontOffice/styles/styles.scss';
+<<<<<<< HEAD
+=======
+// import './frontOffice/styleSkillsTest/styles.scss';
+>>>>>>> 7d2862b2630c643420bbf465d805453e477d7fc9
 //  import React from 'react';
 //  import ReactDOM from 'react-dom';
 //  import 'bootstrap/dist/css/bootstrap.min.css';
@@ -7,12 +11,28 @@
 //  import 'bootstrap/dist/js/bootstrap.bundle.min';
 //  import './index.css';
 //  import App from './App';
+<<<<<<< HEAD
+=======
+//  import reducers from './reducers';
+//  import { applyMiddleware, createStore } from 'redux';
+// import thunkMiddleware from 'redux-thunk';
+
+//  const createStoreWithMiddleware = applyMiddleware(thunkMiddleware)(createStore)
+// const store =createStoreWithMiddleware(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+>>>>>>> 7d2862b2630c643420bbf465d805453e477d7fc9
 //  ReactDOM.render(
 //    <React.StrictMode>
 //      <App />
 //    </React.StrictMode>,
 //    document.getElementById('root')
+<<<<<<< HEAD
 //   );
+=======
+//  );
+
+
+
+>>>>>>> 7d2862b2630c643420bbf465d805453e477d7fc9
 
 import React from "react";
 import ReactDOM from "react-dom";

@@ -7,6 +7,7 @@ const TestInstructions = () => (
     <Helmet>
       <title>Personality Test Instructions</title>
     </Helmet>
+    <Header/>
     <div className="instructions container">
       <h1>How to take the test</h1>
       <p>Ensure you read this guide from start to finish.</p>

@@ -70,6 +70,7 @@ class Message extends React.Component {
             <div className="row d-md-flex no-gutters slider-text align-items-center justify-content-center">
               <div className="col-md-12d-flex align-items-center ">
                 <div className="text text-center">
+<<<<<<< HEAD
                   <br></br>
                   <br></br>
                   <br></br>
@@ -78,6 +79,9 @@ class Message extends React.Component {
                   <h1>Chat with our chatbot </h1>
                   <br></br>
 
+=======
+                  <h2>Chat with our chatbot </h2>
+>>>>>>> 7d2862b2630c643420bbf465d805453e477d7fc9
                   <div
                     className="container"
                     style={{ backgroundColor: "#E7e7e7", borderRadius: "15px" }}
@@ -133,7 +137,11 @@ class Message extends React.Component {
                         className="form-control"
                         style={{
                           marginTop: "10px",
+<<<<<<< HEAD
                           width: "124%",
+=======
+                          width: "100%",
+>>>>>>> 7d2862b2630c643420bbf465d805453e477d7fc9
                           float: "center",
                         }}
                         value={this.state.msg}
@@ -179,4 +187,8 @@ class Message extends React.Component {
   }
 }
 
+<<<<<<< HEAD
 export default Message;
+=======
+export default Message;
+>>>>>>> 7d2862b2630c643420bbf465d805453e477d7fc9

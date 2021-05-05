@@ -26,18 +26,25 @@ import Chatbot from 'frontOffice/views/chatbot/Message';
 //import Sidebar from 'frontOffice/Layouts/Sidebar'; <Sidebar/>
 //import homeQuiz from 'frontOffice/views/homeQuiz';
 
-// Quiz
-import QuizInstructions from "./frontOffice/views/GQuiz/QuizInstructions";
-import play from "./frontOffice/views/GQuiz/play";
-//import profile from './frontOffice/views/Profile'
-import QuizSummary from "frontOffice/views/GQuiz/QuizSummary";
-// Quiz
+//Skills test
+
+import QuizInstructions from './frontOffice/views/GSquiz/QuizInstructions';
+import play from './frontOffice/views/GSquiz/play';
+import profile from './frontOffice/views/Profile';
+import QuizSummary from './frontOffice/views/GSquiz/QuizSummary';
+import Test from './frontOffice/views/GSquiz/Test';
+
+/////////////////////////
 
 // Personality Test
 import PersonalityTest from "frontOffice/views/GPersonalityTest/PersonalityTest";
 import TestInstructions from "frontOffice/views/GPersonalityTest/TestInstructions";
 import TestResult from "frontOffice/views/GPersonalityTest/TestResult";
-// Personality Test
+// CHATBOT
+import Chatbot from 'frontOffice/views/chatbot/Message';
+
+
+
 
 import Layout from "./frontOffice/Layouts/Layout";
 import Home from "./frontOffice/views/Home";
@@ -50,10 +57,11 @@ import Navbar from "frontOffice/Layouts/Navbar";
 //import Sidebar from 'frontOffice/Layouts/Sidebar';                        <Sidebar/>
 //redux
 import { loadUser } from "./actions/auth";
-
+//chouchou
 import NewReclamation from "frontOffice/views/GReclamation/NewReclamation";
 //import Reclamations from 'frontOffice/views/Reclamations';
 import Reclamations from "frontOffice/views/GReclamation/Reclamations";
+import calendar from 'frontOffice/views/GCalendar/calendar';
 
 //chatbot
 import CustomChatbot from "frontOffice/views/chatbot/CustomChatbot";
@@ -78,6 +86,8 @@ const App = () => {
                   <Route exact path="/" component={Home}></Route>
                   <Route exact path="/Home" component={Home}></Route>
                   <Route exact path="/Elearning" component={Elearning}></Route>
+                  <Route exact path="/Profile" component={profile}></Route>
+                            
                   <Route
                     exact
                     strict
@@ -119,17 +129,29 @@ const App = () => {
                     component={Reclamations}
                   ></Route>
                   {/* Quiz */}
-                  <Route
-                    exact
-                    path="/quizSummary"
-                    component={QuizSummary}
-                  ></Route>
-                  <Route
-                    exact
-                    path="/play/instructions"
-                    component={QuizInstructions}
-                  ></Route>
-                  <Route exact path="/play/quiz" component={play}></Route>
+                
+                  <Route  exact  path="/quizSummary" component={QuizSummary}></Route>
+                 <Route  exact  path="/play/instructions" component={QuizInstructions}></Route>
+                 <Route  exact  path="/play/quiz" component={play}></Route>
+                    <Route exact path="/Profile" component={profile}></Route>
+                            {localStorage.getItem("takeTest") === "true" &&
+                               localStorage.getItem("times") === "1" && (
+                                <Route exact path="/take-test" component={Test} /> )}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                   {/* Personality Test */}
                   <Route
                     exact
@@ -141,12 +163,19 @@ const App = () => {
                     path="/personalityTest/takeTest"
                     component={PersonalityTest}
                   ></Route>
+                   <Route  exact path="/calendar" component={calendar}></Route>
                   <Route
                     exact
                     path="/personalityTest/testResult"
                     component={TestResult}
                   ></Route>
+<<<<<<< HEAD
                   <Route  exact  path="/Chatbot" component={Chatbot}></Route>
+=======
+                  {/* Chatbot */}
+                  <Route  exact  path="/Chatbot" component={Chatbot}></Route>
+                  
+>>>>>>> 7d2862b2630c643420bbf465d805453e477d7fc9
                 </Switch>
               </div>
             </div>

@@ -4,6 +4,8 @@ import { Helmet } from "react-helmet";
 import logo from "../../assets/images/discLogo.png";
 import CarouselPersonalityTest from "./CarouselPersonalityTest";
 
+import Header from "../../Layouts/Header";
+
 export default class PersonalityTest extends Component {
   render() {
     return (
@@ -11,6 +13,7 @@ export default class PersonalityTest extends Component {
         <Helmet>
           <title>Personality Test Results</title>
         </Helmet>
+        <Header />
         <div className="questionsTest" style={{ color: "black" }}>
           <div align="center">
             <br />
