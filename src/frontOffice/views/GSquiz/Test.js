@@ -2,40 +2,15 @@ import React, { useEffect ,useState} from "react";
 import Timer from "./Timer";
 import SingleQuestion from "./SingleQuestion";
 import axios from "axios";
+import Header from '../../Layouts/Header';
+import Navbar  from '../../Layouts/Navbar';
 
+import "./componentsStyles/Test.css";
 const jwt = require('jsonwebtoken');
 function Test({ history }) {
 
   const [email, setEmail] = useState("");
-  
   useEffect(() => {
-   
-    //const user = jwt.decode(localStorage.getItem('token'))
-    // const user = JSON.stringify(localStorage.getItem('user'));
-    //  console.log( "email", user?.result?.email);
-    //  console.log(email);
-    //  setEmail(email);
-  //     const jwt = localStorage.getItem('user');
-  //     var user=''
-  // if(jwt) {
-  //   user = JSON.parse(jwt)
-  //   console.log(user)
-  //   axios
-  //     .post("http://localhost:5000/api/result/idConnected", user)
-  //     .then((res) => console.log(res.data));
-    
-   // }
-  //    useEffect(() => {
-  //     const jwt = localStorage.getItem('jwt_info');
-  //     var idConnected=''
-  // if(jwt) {
-  //   idConnected = JSON.parse(jwt).user
-  //   console.log(idConnected)
-  //   axios
-  //   .post("http://localhost:3001/idConnected", idConnected)
-  //   .then((res) => console.log(res.data));
-  // }
-  //   });
   const jwt = localStorage.getItem('user');
   var user=''
       if(jwt) {
@@ -99,8 +74,11 @@ function Test({ history }) {
   }
 
   return (
-    <div className="Test">
-      <Timer calcResult={calcResult} count={questions.length} />
+    <>
+    <Navbar />
+    <Header/>
+    <div className="questions">
+      <Timer  calcResult={calcResult} count={questions.length} />
       <form className="Real-Test" onSubmit={submitHandler}>
         {questions.map((question, index) => {
           return (
@@ -111,9 +89,10 @@ function Test({ history }) {
             />
           );
         })}
-        <button type="submit">Submit the test!</button>
+        <button  style={{marginTop:'2rem'}}type="submit">Submit the test!</button>
       </form>
     </div>
+    </>
   );
 }
 

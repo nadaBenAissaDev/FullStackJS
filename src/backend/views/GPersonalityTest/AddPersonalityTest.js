@@ -12,11 +12,6 @@ function AddPersonalityTest({ history }) {
   const [optionC, setoptionC] = useState({text:"",value:""});
   const [optionD, setoptionD] = useState({text:"",value:""});
 
-  // const [CoptionA,setCoptionA] = useState({text:"",value:""});
-  // const [CoptionB,setCoptionB] = useState({text:"",value:""});
-  // const [CoptionC,setCoptionC] = useState({text:"",value:""});
-  // const [CoptionD,setCoptionD] = useState({text:"",value:""});
-
 
 
   const submitHandler = (e) => {
@@ -27,20 +22,16 @@ function AddPersonalityTest({ history }) {
         optionA,
         optionB,
         optionC,
-        optionD,
-        // CoptionA,
-        // CoptionB,
-        // CoptionC,
-        // CoptionD
+        optionD
       })
       .then((response) => {
-        alert(response.data.msg);
+        alert("Test question added");
         history.push("/admin/personalityTestList");
       })
       .catch((err) => {
         alert(err.response.data.msg);
         setQuestion("");
-        setoptionA({text:"",value:""});
+        setoptionA({text:"",value:""}); 
         setoptionB({text:"",value:""});
         setoptionC({text:"",value:""});
         setoptionD({text:"",value:""});
@@ -58,7 +49,7 @@ function AddPersonalityTest({ history }) {
         }}
       >
         {/* Mask */}
-        <span className="mask bg-gradient-green" />
+        <span className="mask bg-gradient-default" />
         {/* Header container */}
         <Container className="d-flex align-items-center" fluid>
           <div> </div>
@@ -99,13 +90,17 @@ function AddPersonalityTest({ history }) {
                     <label>
                       <strong>Option A</strong>
                     </label>
+                    
+                    
                     <input
                       type="text"
                       className="form-control"
                       id="" 
-                      value={optionA}
-                      onChange={(e) => setoptionA(e.target.value)}
+                      name="text"
+                      value={optionA.text}
+                      onChange={(e) => setoptionA({ ...optionA, text:e.target.value})}
                     />
+                    
                   </td>
                   <td className="col-md-4">
                     <label>
@@ -114,8 +109,9 @@ function AddPersonalityTest({ history }) {
                     <select
                       className="custom-select "
                       id="inlineFormCustomSelectPref"
-                      value={optionA}
-                      onChange={(e) => setoptionA(e.target.value)}
+                      name="value"
+                      value={optionA.value}
+                      onChange={(e) => setoptionA({ ...optionA, value:e.target.value})}
                     >
                       <option value="Red">Red</option>
                       <option value="Yellow">Yellow</option>
@@ -133,8 +129,8 @@ function AddPersonalityTest({ history }) {
                       type="text"
                       className="form-control"
                       id="  "
-                      value={optionB}
-                      onChange={(e) => setoptionB(e.target.value)}
+                      value={optionB.text}
+                      onChange={(e) => setoptionB({ ...optionB, text:e.target.value})}
                     />
                   </td>
                   <td className="col-md-4">
@@ -144,8 +140,8 @@ function AddPersonalityTest({ history }) {
                     <select
                       className="custom-select "
                       id="inlineFormCustomSelectPref"
-                      value={optionB}
-                      onChange={(e) => setoptionB(e.target.value)}
+                      value={optionB.value}
+                      onChange={(e) => setoptionB({ ...optionB, value:e.target.value})}
                     >
                       <option value="Red">Red</option>
                       <option value="Yellow">Yellow</option>
@@ -164,8 +160,8 @@ function AddPersonalityTest({ history }) {
                       type="text"
                       className="form-control"
                       id="  "
-                      value={optionC}
-                      onChange={(e) => setoptionC(e.target.value)}
+                      value={optionC.text}
+                      onChange={(e) => setoptionC({ ...optionC, text:e.target.value})}
                     />
                   </td>
                   <td className="col-md-4">
@@ -175,8 +171,8 @@ function AddPersonalityTest({ history }) {
                     <select
                       className="custom-select "
                       id="inlineFormCustomSelectPref"
-                      value={optionC}
-                      onChange={(e) => setoptionC(e.target.value)}
+                      value={optionC.value}
+                      onChange={(e) => setoptionC({ ...optionC, value:e.target.value})}
                     >
                       <option value="Red">Red</option>
                       <option value="Yellow">Yellow</option>
@@ -195,8 +191,8 @@ function AddPersonalityTest({ history }) {
                       type="text"
                       className="form-control"
                       id="  "
-                      value={optionD}
-                      onChange={(e) => setoptionD(e.target.value)}
+                      value={optionD.text}
+                      onChange={(e) => setoptionD({ ...optionD, text:e.target.value})}
                     />
                   </td>
                   <td className="col-md-4">
@@ -206,8 +202,8 @@ function AddPersonalityTest({ history }) {
                     <select
                       className="custom-select "
                       id="inlineFormCustomSelectPref"
-                      value={optionD}
-                      onChange={(e) => setoptionD(e.target.value)}
+                      value={optionD.value}
+                      onChange={(e) => setoptionD({ ...optionD, value:e.target.value})}
                     >
                       <option value="Red">Red</option>
                       <option value="Yellow">Yellow</option>
@@ -252,80 +248,332 @@ function AddPersonalityTest({ history }) {
 
 export default AddPersonalityTest;
 
-// constructor(props) {
-//   super(props);
 
-//   this.onChangeQuestion = this.onChangeQuestion.bind(this);
-//   this.onChangeOptionA = this.onChangeOptionA.bind(this);
-//   this.onChangeOptionB = this.onChangeOptionB.bind(this);
-//   this.onChangeOptionC = this.onChangeOptionC.bind(this);
-//   this.onChangeOptionD = this.onChangeOptionD.bind(this);
-//   // this.onChangeDate = this.onChangeDate.bind(this);
-//   this.onSubmit = this.onSubmit.bind(this);
 
-//   this.state = {
-//     question: "",
-//     optionA: "",
-//     optionB: {},
-//     optionC: {},
-//     optionD: {},
-//     dateCreated: new Date(),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState } from "react";
+// // reactstrap components
+// import { Button, Card, CardHeader, Container, Row } from "reactstrap";
+// import { Link } from "react-router-dom";
+
+// import axios from "axios";
+// import { Component } from "react";
+
+// export default class AddPersonalityTest extends Component{
+
+//   constructor(props){
+//     super(props)
+//     this.state =  {
+//       question: '',
+//       optionA: {text:'',value:''},
+//       optionB: {text:'',value:''},
+//       optionC: {text:'',value:''},
+//       optionD: {text:'',value:''},
+//     }
+//   }
+
+//   handleChange = ((e)=>{
+//     const { name, value} = e.target;
+//     this.setState({
+//       ...this.state,
+//       [name]: value
+//     })
+//   });
+
+
+//    onSubmit = (e) => {
+//     e.preventDefault();
+//     const { question,optionA,optionB,optionC,optionD } = this.state
+//     const data = {
+//       question: question,
+//       optionA: optionA,
+//       optionB: optionB,
+//       optionC: optionC,
+//       optionD: optionD
+//     } 
+//       console.log(data)
+
+//     // axios
+//     //   .post("http://localhost:5000/PersonalityTest/add", {
+//     //     question,
+//     //     optionA,
+//     //     optionB,
+//     //     optionC,
+//     //     optionD
+//     //   })
+//     //   .then((response) => {
+//     //     alert("Test question added");
+//     //     history.push("/admin/personalityTestList");
+//     //   })
+//     //   .catch((err) => {
+//     //     alert(err.response.data.msg);
+//     //     setQuestion("");
+//     //     setoptionA({text:"",value:""});
+//     //     setoptionB({text:"",value:""});
+//     //     setoptionC({text:"",value:""});
+//     //     setoptionD({text:"",value:""});
+//     //   });
 //   };
+
+//   render(){
+//   return (
+//     <>
+//       <div
+//         className="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
+//         style={{
+//           minHeight: "300px",
+//           backgroundSize: "cover",
+//           backgroundPosition: "center top",
+//         }}
+//       >
+//         {/* Mask */}
+//         <span className="mask bg-gradient-green" />
+//         {/* Header container */}
+//         <Container className="d-flex align-items-center" fluid>
+//           <div> </div>
+//         </Container>
+//       </div>
+
+//       <Container className="mt--7" fluid>
+//         <Row>
+//           <div className="col">
+//             <Card className="shadow">
+//               <CardHeader className="border-0">
+//                 <h3 className="mb-0">Add Question</h3>
+//               </CardHeader>
+//               <form className="container" onSubmit={this.onSubmit}>
+//                 <div className="form-group">
+//                   <br />
+
+//                   <div className="form-group col-md-12">
+//                     <label>
+//                       <strong>Question</strong>
+//                     </label>
+//                     <div className="md-form">
+//                       <textarea
+//                         id="form10"
+//                         className="md-textarea form-control"
+//                         rows="3"
+//                         placeholder="Write your question here.."
+//                         value={this.state.question}
+//                         onChange={this.handleChange}
+//                       ></textarea>
+//                     </div>
+//                   </div>
+//                 </div>
+
+//                 {/* COLORS */}
+//                 <Row className="form-group col-md-12">
+//                   <td className="col-md-6">
+//                     <label>
+//                       <strong>Option A</strong>
+//                     </label>
+                    
+                    
+//                     <input
+//                       type="text"
+//                       className="form-control"
+//                       id="" 
+//                       name="text"
+//                       value={...this.state.optionA.text}
+//                       onChange={this.handleChange}
+//                       // value={optionA.text0}
+//                       // onChange={(e) => setoptionA({ ...optionA, text:e.target.value})}
+//                     />
+                    
+//                   </td>
+//                   <td className="col-md-4">
+//                     <label>
+//                       <strong>Color A</strong>
+//                     </label>
+//                     <select
+//                       className="custom-select "
+//                       id="inlineFormCustomSelectPref"
+//                       name="value"
+//                       value={this.state.optionA.value}
+//                       onChange={this.handleChange}
+//                       // value={optionA.value}
+//                       // onChange={(e) => setoptionA({ ...optionA, value:e.target.value})}
+//                     >
+//                       <option value="Red">Red</option>
+//                       <option value="Yellow">Yellow</option>
+//                       <option value="Green">Green</option>
+//                       <option value="Blue">Blue</option>
+//                     </select>
+//                   </td>
+//                 </Row>
+//                 <Row className="form-group col-md-12">
+//                   <td className="col-md-6">
+//                     <label>
+//                       <strong>Option B</strong>
+//                     </label>
+//                     <input
+//                       type="text"
+//                       className="form-control"
+//                       id="  "
+//                       // value={optionB.text}
+//                       // onChange={(e) => setoptionB({ ...optionB, text:e.target.value})}
+//                       value={this.state.optionB.text}
+//                       onChange={this.handleChange}
+//                     />
+//                   </td>
+//                   <td className="col-md-4">
+//                     <label>
+//                       <strong>Color B</strong>
+//                     </label>
+//                     <select
+//                       className="custom-select "
+//                       id="inlineFormCustomSelectPref"
+//                       // value={optionB.value}
+//                       // onChange={(e) => setoptionB({ ...optionB, value:e.target.value})}
+//                       value={this.state.optionB.value}
+//                       onChange={this.handleChange}
+//                     >
+//                       <option value="Red">Red</option>
+//                       <option value="Yellow">Yellow</option>
+//                       <option value="Green">Green</option>
+//                       <option value="Blue">Blue</option>
+//                     </select>
+//                   </td>
+//                 </Row>
+
+//                 <Row className="form-group col-md-12">
+//                   <td className="col-md-6">
+//                     <label>
+//                       <strong>Option C</strong>
+//                     </label>
+//                     <input
+//                       type="text"
+//                       className="form-control"
+//                       id="  "
+//                       value={this.state.optionC.text}
+//                       onChange={this.handleChange}
+//                       // value={optionC.text}
+//                       // onChange={(e) => setoptionC({ ...optionC, text:e.target.value})}
+//                     />
+//                   </td>
+//                   <td className="col-md-4">
+//                     <label>
+//                       <strong>Color C</strong>
+//                     </label>
+//                     <select
+//                       className="custom-select "
+//                       id="inlineFormCustomSelectPref"
+//                       value={this.state.optionC.value}
+//                       onChange={this.handleChange}
+//                       // value={optionC.value}
+//                       // onChange={(e) => setoptionC({ ...optionC, value:e.target.value})}
+//                     >
+//                       <option value="Red">Red</option>
+//                       <option value="Yellow">Yellow</option>
+//                       <option value="Green">Green</option>
+//                       <option value="Blue">Blue</option>
+//                     </select>
+//                   </td>
+//                 </Row>
+
+//                 <Row className="form-group col-md-12">
+//                   <td className="col-md-6">
+//                     <label>
+//                       <strong>Option D</strong>
+//                     </label>
+//                     <input
+//                       type="text"
+//                       className="form-control"
+//                       id="  "
+//                       value={this.state.optionD.text}
+//                       onChange={this.handleChange}
+//                       // value={optionD.text}
+//                       // onChange={(e) => setoptionD({ ...optionD, text:e.target.value})}
+//                     />
+//                   </td>
+//                   <td className="col-md-4">
+//                     <label>
+//                       <strong>Color D</strong>
+//                     </label>
+//                     <select
+//                       className="custom-select "
+//                       id="inlineFormCustomSelectPref"
+//                       value={this.state.optionD.value}
+//                       onChange={this.handleChange}
+//                       // value={optionD.value}
+//                       // onChange={(e) => setoptionD({ ...optionD, value:e.target.value})}
+//                     >
+//                       <option value="Red">Red</option>
+//                       <option value="Yellow">Yellow</option>
+//                       <option value="Green">Green</option>
+//                       <option value="Blue">Blue</option>
+//                     </select>
+//                   </td>
+//                 </Row>
+
+//                 <Row className="form-group col-md-12"></Row>
+
+//                 <div className="form-group">
+//                   <Button
+//                     className="btn btn-block col-md-2 "
+//                     color="primary"
+//                     type="submit"
+//                     value="Create Exercise Log"
+//                   >
+//                     Add
+//                   </Button>
+//                 </div>
+
+//                 <Button className="btn btn-block col-md-2 " color="danger">
+//                   <Link
+//                     to="/admin/personalityTestList"
+//                     style={{ color: "white" }}
+//                   >
+//                     Cancel
+//                   </Link>
+//                 </Button>
+
+//                 <br />
+//                 <br />
+//               </form>
+//             </Card>
+//           </div>
+//         </Row>
+//       </Container>
+//     </>
+//   );
+
+// }
 // }
 
-// onChangeQuestion(e) {
-//   this.setState({
-//     question: e.target.value,
-//   });
-// }
 
-// onChangeOptionA(e) {
-//   this.setState({
-//     optionA: e.target.value,
-//     // value: e.target.value,
-//   });
-// }
-// onChangeOptionB(e) {
-//   this.setState({
-//     optionB: e.target.value,
-//     //value: e.target.value,
-//   });
-// }
-// onChangeOptionC(e) {
-//   this.setState({
-//     optionC: e.target.value,
-//     //value: e.target.value,
-//   });
-// }
-// onChangeOptionD(e) {
-//   this.setState({
-//     optionD: e.target.value,
-//     //value: e.target.value,
-//   });
-// }
 
-// // onChangeDate(date) {
-// //   this.setState({
-// //     date: date
-// //   })
-// // }
 
-// onSubmit(e) {
-//   e.preventDefault();
 
-//   const q = {
-//     question: this.state.question,
-//     optionA: this.state.optionA,
-//     optionB: this.state.optionB,
-//     optionC: this.state.optionC,
-//     optionD: this.state.optionD,
-//     // date: this.state.date,
-//   };
 
-//   console.log(q);
 
-//   // axios.post('http://localhost:5000/exercises/add', exercise)
-//   //   .then(res => console.log(res.data));
 
-//   window.location = "/admin/personalityTestList";
-// }
+
+

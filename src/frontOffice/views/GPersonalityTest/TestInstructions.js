@@ -2,11 +2,14 @@ import React, { Component, Fragment } from "react";
 import Header from "../../Layouts/Header";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import Navbar  from '../../Layouts/Navbar';
 const TestInstructions = () => (
   <>
+    <Navbar />
     <Helmet>
       <title>Personality Test Instructions</title>
     </Helmet>
+    <Header/>
     <div className="instructions container">
       <h1>How to take the test</h1>
       <p>Ensure you read this guide from start to finish.</p>

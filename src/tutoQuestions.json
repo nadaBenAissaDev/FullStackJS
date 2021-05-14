@@ -1,136 +1,43 @@
 [
     {
-        "question": "What temperature does water boil at?",
-        "optionA": "50 degrees Celcius",
-        "optionB": "25 degrees Celcius",
-        "optionC": "100 degrees Celcius",
-        "optionD": "150 degrees Celcius",
-        "answer": "100 degrees Celcius"
-    },
-
+        "question": "In my work environment, it is most important to me...",
+        "optionA": "To help co-workers and to be in a peaceful environment",
+        "optionB": "To feel that my co-workers admire me and to be free from rigid rules.",
+        "optionC": "o know exactly what is expected of me and to finish one task before moving to another.",
+        "optionD": "To get things done and to see results.",
+        "answer": "To get things done and to see results."
+    }, 
     {
-        "question": "Who wrote Julius Caesar, Macbeth and Hamlet?",
-        "optionA": "Wole Soyinka",
-        "optionB": "William Shakespeare",
-        "optionC": "Ngozi Chimamanda Adichie",
-        "optionD": "Dan Brown",
-        "answer": "William Shakespeare"
-    },
-
+        "question": "When someone offers an opinion or conclusion and I disagree, I am most likely to...",
+        "optionA": "Tell them that I disagree.",
+        "optionB": "Say something humorous.",
+        "optionC": "Ask for more information.",
+        "optionD": "Nod and say nothing.",
+        "answer": "Nod and say nothing."
+    }, 
     {
-        "question": "What did the crocodile swallow in Peter Pan?",
-        "optionA": "A Book",
-        "optionB": "A Computer",
-        "optionC": "A pair of shoes",
-        "optionD": "Alarm Clock",
-        "answer": "Alarm Clock"
-    },
-
+        "question": "When I am working on a team and we encounter a difficulty of some kind, I am most likely to say...",
+        "optionA": "Lighten up! Just go with the flow!",
+        "optionB": "To get things done and to see results.",
+        "optionC": "o know exactly what is expected of me and to finish one task before moving to another.",
+        "optionD": "Let's make a decision!",
+        "answer": "Lighten up! Just go with the flow!"
+    }, 
     {
-        "question": "Which is the only mammal that can’t jump?",
-        "optionA": "Dog",
-        "optionB": "Elephant",
-        "optionC": "Goat",
-        "optionD": "Lion",
-        "answer": "Elephant"
-    },
-
+        "question": "How do you feel ?",
+        "optionA": "Focused",
+        "optionB": "Happy",
+        "optionC": "Blessed",
+        "optionD": "Neutral",
+        "answer": "Ask for more information."
+    }, 
     {
-        "question": "Who lived at 221B, Baker Street, London?",
-        "optionA": "Tony Stark",
-        "optionB": "Morgan Freeman",
-        "optionC": "Sherlock Holmes",
-        "optionD": "Samuel L. Jackson",
-        "answer": "Sherlock Holmes"
-    },
-
-    {
-        "question": "What colour is a panda?",
-        "optionA": "Green and Yellow",
-        "optionB": "Blue and Red",
-        "optionC": "Green and White",
-        "optionD": "Black and White",
-        "answer": "Black and White"
-    },
-
-    {
-        "question": "Where is the smallest bone in the human body?",
-        "optionA": "The Chest",
-        "optionB": "The Ear",
-        "optionC": "The Legs",
-        "optionD": "The Hands",
-        "answer": "The Ear"
-    },
-
-    {
-        "question": "What does the roman numeral C represent?",
-        "optionA": "100",
-        "optionB": "10",
-        "optionC": "10,000",
-        "optionD": "1,000,000",
-        "answer": "100"
-    },
-
-    {
-        "question": "What takes place in Hong Kong's Happy Valley?",
-        "optionA": "Chicken Wrestling",
-        "optionB": "Horse racing",
-        "optionC": "Street Racing",
-        "optionD": "Arm Wrestling",
-        "answer": "Horse racing"
-    },
-
-    {
-        "question": "Who painted the Mona Lisa?",
-        "optionA": "Alexander Graham Bell",
-        "optionB": "Sir Isaac Newton",
-        "optionC": "Leonardo Da Vinci",
-        "optionD": "Albert Einstein",
-        "answer": "Leonardo Da Vinci"
-    },
-
-    {
-        "question": "What’s the most important book in the Moslem religion?",
-        "optionA": "The Koran",
-        "optionB": "The Dictionary",
-        "optionC": "The Bible",
-        "optionD": "The Chemistry text Book",
-        "answer": "The Koran"
-    },
-
-    {
-        "question": "What’s the capital of Ethiopia?",
-        "optionA": "Cape Town",
-        "optionB": "San Francisco",
-        "optionC": "Abuja",
-        "optionD": "Syndey",
-        "answer": "Addis Ababa"
-    },
-
-    {
-        "question": "How many squares are there on a chess board?",
-        "optionA": "128",
-        "optionB": "64",
-        "optionC": "32",
-        "optionD": "256",
-        "answer": "64"
-    },
-
-    {
-        "question": "Who invented the electric light bulb?",
-        "optionA": "Tom Cruise",
-        "optionB": "Barack Obama",
-        "optionC": "Wole Soyinka",
-        "optionD": "Thomas Edison",
-        "answer": "Thomas Edison"
-    },
-
-    {
-        "question": "What are the first three words of the bible?",
-        "optionA": "be with everyone",
-        "optionB": "Again Jesus asked",
-        "optionC": "In the beginning",
-        "optionD": "At that time",
-        "answer": "In the beginning"
+        "question": "I love colors that are ..",
+        "optionA": "Dark",
+        "optionB": "Light",
+        "optionC": "Flashy",
+        "optionD": "I love them all !!",
+        "answer": "I love them all !!"
     }
+
 ]

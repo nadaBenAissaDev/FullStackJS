@@ -6,6 +6,7 @@ import { getCalendar } from '../../../actions/calendarActions';
 import { connect } from 'react-redux';
 import axios from "axios";
 import Header from '../../Layouts/Header';
+import Navbar  from '../../Layouts/Navbar';
 
 class Calender extends Component {
   componentDidMount() {
@@ -36,6 +37,7 @@ class Calender extends Component {
   render() {
     return (
       <>
+      <Navbar/>
       <Header/>
 
       <React.Fragment>

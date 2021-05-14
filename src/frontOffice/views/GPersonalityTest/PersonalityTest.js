@@ -4,6 +4,7 @@ import clockOutline from "@iconify-icons/mdi/clock-outline";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import logo from "../../assets/images/discLogo.png";
+import Header from "../../Layouts/Header";
 
 //12-ADDING QUESTIONS
 //import questions from '../../../personalityQuestions.json';
@@ -18,6 +19,7 @@ import m from "materialize-css";
 import correctNotif from "../../assets/audio/src_assets_audio_correct-answer.mp3";
 import wrongNotif from "../../assets/audio/src_assets_audio_wrong-answer.mp3";
 import btnSound from "../../assets/audio/src_assets_audio_button-sound.mp3";
+import Navbar  from '../../Layouts/Navbar';
 
 export default class PersonalityTest extends Component {
   constructor(props) {
@@ -95,9 +97,6 @@ export default class PersonalityTest extends Component {
   };
 
   handleQuitButtonClick = () => {
-    setTimeout(() => {
-      document.getElementById("btnSound").play();
-    }, 500);
     if (window.confirm("Are you sure you want to quit?")) {
       this.props.history.push("/Elearning");
     }
@@ -105,14 +104,14 @@ export default class PersonalityTest extends Component {
 
   handleOptionClick = (e) => {
     if (e.target.innerHTML.toLowerCase() === this.state.answer.toLowerCase()) {
-      setTimeout(() => {
-        document.getElementById("correct-sound").play();
-      }, 500);
+      // setTimeout(() => {
+      //   document.getElementById("correct-sound").play();
+      // }, 500);
       this.correctAnswer();
     } else {
-      setTimeout(() => {
-        document.getElementById("wrong-sound").play();
-      }, 500);
+      // setTimeout(() => {
+      //   document.getElementById("wrong-sound").play();
+      // }, 500);
       this.wrongAnswer();
     }
     // m.toast({
@@ -242,6 +241,7 @@ export default class PersonalityTest extends Component {
     return (
       <>
         <>
+        <Navbar />
           <audio id="correct-sound" src={correctNotif}></audio>
           <audio id="wrong-sound" src={wrongNotif}></audio>
           <audio id="btn-sound" src={btnSound}></audio>
@@ -249,6 +249,8 @@ export default class PersonalityTest extends Component {
         <Helmet>
           <title>Personality Test</title>
         </Helmet>
+        
+        <Header/>
         <div className="questionsTest" style={{ color: "black" }}>
           <div align="center">
             <br />

@@ -8,7 +8,7 @@ import '../../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 
 import Header from '../../Layouts/Header';
-
+import Navbar  from '../../Layouts/Navbar';
 //import 'react-notifications/lib/notifications.css';
 //import {NotificationContainer, NotificationManager} from 'react-notifications';
 //import ReactWhatsapp from 'react-whatsapp';
@@ -146,6 +146,7 @@ export default class NewReclamation extends Component {
   render() {
     return (
       <>
+       <Navbar />
         <Header/>
 
     <div>

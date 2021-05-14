@@ -5,47 +5,7 @@ import {Helmet} from 'react-helmet';
 import React, { useState,useEffect, useContext } from "react";
 import axios from "axios";
 import Header from '../../Layouts/Header';
-// const QuizInstructions = (({ history })=>(
-//     <>
- 
-//     <Helmet><title>Test Instructions</title></Helmet>
-    
-//     <div className="instructions container">
-//         <h1>How to pass the test</h1>
-//         <p>Ensure you read this guide from start to finish.</p>
-//         <ul className="browser-default" id="main-list">
-//         <li>the test has a duration of 15 minutes and ends as soon as your time elapses</li>
-//         <li>Each test consists of 15 questions.</li>
-//         <li>Every question contains 4 options.</li>
-//         <li>Select the option which best answers the question by clicking it.</li>
-//         </ul>
-
-//         <form className="row g-2" style={{display:'flex',alignContent:'center',alignItems:'center', padding:'3rem',margin:'2rem'}}>
-//     <div className="col-auto mb-3">
-//       <input type="password" className="form-control" id="inputPassword2" placeholder="Password"/>
-//     </div>
-//     <div className="col-auto">
-//       <button type="submit" className="btn btn-primary mb-3">Confirm identity</button>
-//     </div>
-//       </form>
-
-
-
-
-
-
-
-
-//         <span className="left" ><Link className="left-btn" to="/">No take me back</Link></span>
-//         <span className="right"><Link className="right-btn" to="/play/quiz">Okay,Let's do this</Link></span>
-        
-//     </div>
-   
-//   </>
-// );
-
-// export default QuizInstructions;
-
+import Navbar  from '../../Layouts/Navbar';
 
 function QuizInstructions({ history }) {
 
@@ -87,6 +47,7 @@ function QuizInstructions({ history }) {
   };
   return (
     <>
+        <Navbar />
         <Helmet><title>Test Instructions</title></Helmet>
         <Header/>
     

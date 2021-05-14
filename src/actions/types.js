@@ -1,7 +1,4 @@
-
-//export const GET_ERRORS = 'GET_ERRORS';
-export const CLEAR_ERRORS = 'CLEAR_ERRORS';
-
+//gJob nada
 export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
 export const REGISTER_FAIL = 'REGISTER_FAIL';
 export const SET_ALERT = 'SET_ALERT';
@@ -28,8 +25,8 @@ export const REMOVE_COMMENT = 'REMOVE_COMMENT';
 export const JOB_ACTIVATED ='JOB_ACTIVATED';
 export const JOB_DEACTIVATED ='JOB_DEACTIVATED';
 export const JOB_DELETED ='JOB_DELETED';
-
-
+export const ADD_CV ='ADD_CV';
+export const ERROR_ADD_CV ='ERROR_ADD_CV';
 
 //chouchou
 // CALENDAR TYPES
@@ -45,3 +42,5 @@ export const LOAD_QUIZ = 'LOAD_QUIZ';
 export const SET_QUIZ_LOADING = 'SET_QUIZ_LOADING';
 export const END_FREE_QUIZ = 'END_FREE_QUIZ';
 export const CLEAR_QUIZ_STATS = 'CLEAR_QUIZ_STATS';
+//export const GET_ERRORS = 'GET_ERRORS';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';

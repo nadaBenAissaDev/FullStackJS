@@ -83,7 +83,6 @@ const Login = ({ login, isAuth }) => {
               <br></br>
                   <Link to="/Register" className="nav-link">SIGN UP</Link>
                 </center>
-                <Link to="/Candidates" className="nav-link">Canditates</Link>
               </div>          
             </form>
           </div>
@@ -103,4 +102,3 @@ const mapStateToProps = state => (
   }
 );
 export default connect(mapStateToProps, {login}) (Login);
-//export default connect(null, {login}) (Login);

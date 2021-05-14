@@ -33,10 +33,15 @@ import { isPropertyAccessExpression } from 'typescript';
                 <>
                 <p>latitude: {this.state.latitude}</p>
                 <p>latitude: {this.state.longitude}</p>
-                <Map google={this.props.google} zoom={14} initialCenter={{lat: parseFloat(this.state.latitude), 
-                lng: parseFloat(this.state.longitude)}} 
+                {/* <Map google={this.props.google} zoom={14} initialCenter={{lat: parseFloat(this.state.latitude), 
+                lng:   parseFloat(this.state.longitude)}} 
                    style={{ width: "600px", height: "400px" }}>
-                <Marker position={{ lat: parseFloat(this.state.latitude), lng: parseFloat(this.state.longitude)}} />
+                <Marker position={{ lat:  parseFloat(this.state.latitude), lng:   parseFloat(this.state.longitude)}} />
+                </Map>   */}
+                <Map google={this.props.google} zoom={14} initialCenter={{lat: 36.8369414, 
+                lng:  10.2344475}} 
+                   style={{ width: "600px", height: "400px" }}>
+                <Marker position={{ lat: 36.8369414, lng:  10.2344475}} />
                 </Map>          
                 </>
             );

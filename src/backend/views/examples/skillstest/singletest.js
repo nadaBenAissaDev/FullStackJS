@@ -41,6 +41,7 @@ import {
 
 function SingleTest({ test, history, index, /*token*/ url}) { 
   const date = test.validity;
+  //console.log(test);
   //  const [notify,setNotify]=useState({isOpen:false,message:'',type:''}) 
   const handleClick = () => {
          history.push(`/admin/result/${test._id}`);
@@ -57,7 +58,7 @@ function SingleTest({ test, history, index, /*token*/ url}) {
      const handledeletep =() =>{
        axios.delete(`http://localhost:5000/api/test/${test._id}`)
        .then((response) => {
-        console.log(response.data);
+        //console.log(response.data);
       
        alert("Successfully removed Test");
          window.location.reload(true);
@@ -70,16 +71,16 @@ function SingleTest({ test, history, index, /*token*/ url}) {
   
 const handleClick2 =()=>{
   
- /* axios.put(`http://localhost:5000/api/test/archive/${test._id}`)
-  .then((response) => {
-    console.log(response.data);
-    alert("Successfully archived Test");
-    window.location.reload(true);
-  })
-  .catch((err) => {
+   axios.put(`http://localhost:5000/api/test/archive/${test._id}`)
+   .then((response) => {
+     //console.log(response.data);
+     alert("Successfully archived Test");
+     window.location.reload(true);
+   })
+   .catch((err) => {
    alert(err);
   console.log(err);
-  });*/
+   });
 
 };
   return (

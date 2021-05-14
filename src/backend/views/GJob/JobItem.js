@@ -14,14 +14,14 @@ import {
   import {deactivateJob} from '../../../actions/job';
   import {activateJob} from '../../../actions/job';
   import {deleteJob} from '../../../actions/job';
-  import {Button, ButtonToolBar} from 'react-bootstrap';
+  // import {Button, ButtonToolBar} from 'react-bootstrap';
   import Popup from './Popup';
 import PostJob from './PostJob';
 import JobItemDetails from './JobItemDetails';
 
 const JobItem = ({
     job: { _id, nbrApplied, title, location, description, salary, studyLevel, experience,activate, contractType, company, user, likes, comments, requirements, createdAt, skills  }
-,deactivateJob, activateJob}) => {
+,deactivateJob, activateJob, deleteJob}) => {
   const history = useHistory();
   const [openPopup, setOpenPopup] = useState(false);
   
@@ -78,9 +78,7 @@ const JobItem = ({
                           <DropdownItem onClick= {() =>setOpenPopup(true)}>
                             <Link>Details</Link>
                           </DropdownItem>
-                          <DropdownItem>
-                          <Link onClick={() => Delete(_id)}> Delete</Link>
-                          </DropdownItem>
+                          <DropdownItem onClick={() => Delete(_id)}><Link>Delete</Link></DropdownItem>
                           {activate ===1 ? <DropdownItem><Link to="/admin/Ranking"> Ranking </Link></DropdownItem>: <p></p>}
                           {activate === 1 ? <DropdownItem onClick={() => deactivate(_id)}><Link>Deactivate</Link></DropdownItem>
                           :
@@ -104,10 +102,11 @@ const JobItem = ({
 JobItem.propTypes = {
     job: PropTypes.object.isRequired,
     deactivateJob: PropTypes.func.isRequired,
+    deleteJob: PropTypes.func.isRequired,
     activateJob: PropTypes.func.isRequired
     //auth: PropTypes.object.isRequired,
 }
 const mapStateToProps = state => ({
    //auth: state.auth
 });
-export default connect(mapStateToProps, {deactivateJob, activateJob}) (JobItem);
+export default connect(mapStateToProps, {deactivateJob, activateJob, deleteJob}) (JobItem);

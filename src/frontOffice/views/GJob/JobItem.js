@@ -1,14 +1,17 @@
-import React, {Fragment} from 'react';
+import React, {useState} from 'react';
 import {Link} from 'react-router-dom' ;
 import Moment from 'react-moment';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { addLike, removeLike} from '../../../actions/job';
+import Popup from '../GCv/PopUp';
 const JobItem = ({
     addLike,
     removeLike,
     job: { _id, nbrApplied, title, location, description, salary, studyLevel, experience, contractType, company, user, likes, comments, requirements, createdAt, skills  }
 }) => {
+  const [openPopup, setOpenPopup] = useState(false);
+
     return (
         <div className="col-md-12 ftco-animate">
         <div className="job-post-item p-4 d-block d-lg-flex align-items-center">
@@ -24,7 +27,7 @@ const JobItem = ({
         </div>
       <p>{description}</p>
     </div>
-    <hr/>
+    <hr/>     
             <div className="job-post-item-body d-block d-md-flex">
                 <div className="mr-3"><span className="icon-calendar"></span> <Link to="#"><Moment format="YYYY/MM/DD">{createdAt}</Moment></Link></div>
                 <div className="mr-3"><span className="icon-my_location"></span> <Link to="#">{location}</Link></div>
@@ -37,8 +40,14 @@ const JobItem = ({
                     <span className="icon-heart">{likes.length}</span>
                 </button>
             </div>
-          <Link to="job-single.html" className="btn btn-outline-primary">Apply Job</Link>
+          {/* <Link onClick= {() =>setOpenPopup(true)} className="btn btn-outline-primary">Apply Job</Link> */}
           </div>
+                  <Popup 
+                      jobID= {_id}
+                      title ="Apply Job"
+                      openPopup ={openPopup} 
+                      setOpenPopup={setOpenPopup}>
+                      </Popup>
         </div>
         </div>
         
@@ -47,9 +56,11 @@ const JobItem = ({
 };
 JobItem.propTypes = {
     job: PropTypes.object.isRequired,
-    //auth: PropTypes.object.isRequired,
-}
-const mapStateToProps = state => ({
-   //auth: state.auth
-});
-export default connect(mapStateToProps, {addLike, removeLike}) (JobItem);
+  }
+
+// const mapStateToProps = state => (
+//   {
+//     isAuth: state.auth.isAuthenticated
+//   }
+// );
+export default connect(null, {addLike, removeLike}) (JobItem);

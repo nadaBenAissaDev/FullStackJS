@@ -1,84 +1,133 @@
 const mongoose= require('mongoose');
 const { isStringTextContainingNode } = require('typescript');
 const CvSchema = new mongoose.Schema({
-    firstName:{
-        type:String,
-        trim: true
-    },  
-    lastName:{
-        type:String,
-        trim: true
-    }, 
-    email: {
-        type:String, 
-        required: true,
-        match:/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
-    },
-    location:{
-        type:String,
-        trim: true,
-    },
-    numTel:{
-        type:Number,
-        minlength:8
-        },
-    education:[
-        {   
-           schoolUniversity: {
-                type: String,
-                trim: true
-            },
-            year:{
-                type: Date
-            },
-        }
-    ],
-    educationalExperience:[
-        {
-            title: {
-                type: String,
-                trim: true
-            },
-            year:{
-                type: Date
-            },
-            description:{
-                type: String,
-                trim: true
-            }
+    // job:{
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: 'jobs'
+    // },
 
-        }
-    ],
-    technicalExperience:[
-        {
-            title: {
-                type: String,
-                trim: true
-            },
-            year:{
-                type: Date
-            },
-            description:{
-                type: String,
-                trim: true
-            },
-            location:{
-                type: String,
-                trim: true
-            }
-
-        }
-    ],
-    langage:[
-        {
-            name: {
+            firstname: {
                 type: String
             },
-            level:{
+            lastname: {
                 type: String
-            }
-        }
-    ]
-
+            },
+            email: {
+                type: String
+            },
+            phone: {
+                type: String
+            },
+            linkedin: {
+                type: String
+            },
+            about: {
+                type: String
+            },
+           university: {
+                type: String,
+                trim: true
+            },
+            universityYear:{
+                type: Date
+            },
+            universityLoc: {
+                type: String,
+                trim: true
+            },
+            school: {
+                type: String,
+                trim: true
+            },
+            schoolYear:{
+                type: Date
+            },
+            schoolLoc:{
+                type: String,
+                trim: true,
+            },
+            educExptitle: {
+                type: String,
+                trim: true
+            },
+            educExpyear:{
+                type: Date
+            },
+            educExpdescription:{
+                type: String,
+                trim: true
+            },
+            educExptitleTwo: {
+                type: String,
+                trim: true
+            },
+            educExpyearTwo:{
+                type: Date
+            },
+            educExpdescriptionTwo:{
+                type: String,
+                trim: true
+            },
+            techExptitle: {
+                type: String,
+                trim: true
+            },
+            techExpinstOrg: {
+                type: String,
+                trim: true
+            },
+            techExpyear:{
+                type: Date
+            },
+            techExpdescription:{
+                type: String,
+                trim: true
+            },
+            techExplocation:{
+                type: String,
+                trim: true
+            },
+            
+            techExptitleTwo: {
+                type: String,
+                trim: true
+            },
+            techExpinstOrgTwo: {
+                type: String,
+                trim: true
+            },
+            techExpyearTwo:{
+                type: Date
+            },
+            techExpdescriptionTwo:{
+                type: String,
+                trim: true
+            },
+            techExplocationTwo:{
+                type: String,
+                trim: true
+            },
+            langname: {
+                type: String
+            },
+            langlevel:{
+                type: String
+            },
+            langnameTwo: {
+                type: String
+            },
+            langlevelTwo:{
+                type: String
+            },
+            skills: [{
+                title: {
+                    type: String,
+                    trim: true
+                } 
+            }  
+            ],
+            jobId:{
+                type: String,
+            },
     });
 module.exports = Cv = mongoose.model('cv', CvSchema);

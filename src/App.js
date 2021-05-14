@@ -18,6 +18,11 @@ import { Provider } from "react-redux";
 import store from "./store";
 import setAuthToken from "./utils/setAuthToken";
 
+//Cv
+import PDF from "frontOffice/views/GCv/PDF";
+// CHATBOT
+import Chatbot from 'frontOffice/views/chatbot/Message';
+
 //import './backend/assets/css/argon-dashboard-react.css';
 //import PostJob from 'frontOffice/views/PostJob';
 //import Sidebar from 'frontOffice/Layouts/Sidebar'; <Sidebar/>
@@ -25,11 +30,13 @@ import setAuthToken from "./utils/setAuthToken";
 
 //Skills test
 
-import QuizInstructions from './frontOffice/views/GSquiz/QuizInstructions';
-import play from './frontOffice/views/GSquiz/play';
-import profile from './frontOffice/views/Profile';
-import QuizSummary from './frontOffice/views/GSquiz/QuizSummary';
-import Test from './frontOffice/views/GSquiz/Test';
+import QuizInstructions from "./frontOffice/views/GSquiz/QuizInstructions";
+import play from "./frontOffice/views/GSquiz/play";
+import profile from "./frontOffice/views/Profile";
+import QuizSummary from "./frontOffice/views/GSquiz/QuizSummary";
+import Test from "./frontOffice/views/GSquiz/Test";
+import demoInstructions from "./frontOffice/views/GSquiz/demoinstruction";
+import updateprofile from "./frontOffice/views/UpdateProfile";
 
 /////////////////////////
 
@@ -37,7 +44,7 @@ import Test from './frontOffice/views/GSquiz/Test';
 import PersonalityTest from "frontOffice/views/GPersonalityTest/PersonalityTest";
 import TestInstructions from "frontOffice/views/GPersonalityTest/TestInstructions";
 import TestResult from "frontOffice/views/GPersonalityTest/TestResult";
-// Personality Test
+
 
 import Layout from "./frontOffice/Layouts/Layout";
 import Home from "./frontOffice/views/Home";
@@ -54,7 +61,8 @@ import { loadUser } from "./actions/auth";
 import NewReclamation from "frontOffice/views/GReclamation/NewReclamation";
 //import Reclamations from 'frontOffice/views/Reclamations';
 import Reclamations from "frontOffice/views/GReclamation/Reclamations";
-import calendar from 'frontOffice/views/GCalendar/calendar';
+import calendar from "frontOffice/views/GCalendar/calendar";
+import chat from "frontOffice/views/Gchat/chat";
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -69,7 +77,7 @@ const App = () => {
       <div className="App">
         <BrowserRouter>
           <Fragment>
-            <Navbar />
+           
             <div id="content-wrapper" className="d-flex flex-column">
               <div id="content">
                 <Switch>
@@ -77,7 +85,7 @@ const App = () => {
                   <Route exact path="/Home" component={Home}></Route>
                   <Route exact path="/Elearning" component={Elearning}></Route>
                   <Route exact path="/Profile" component={profile}></Route>
-                            
+
                   <Route
                     exact
                     strict
@@ -113,29 +121,36 @@ const App = () => {
                     path="/Reclamations"
                     component={Reclamations}
                   ></Route>
+                  <Route exact path="/chat" component={chat}></Route>
                   {/* Quiz */}
-                
-                  <Route  exact  path="/quizSummary" component={QuizSummary}></Route>
-                 <Route  exact  path="/play/instructions" component={QuizInstructions}></Route>
-                 <Route  exact  path="/play/quiz" component={play}></Route>
-                    <Route exact path="/Profile" component={profile}></Route>
-                            {localStorage.getItem("takeTest") === "true" &&
-                               localStorage.getItem("times") === "1" && (
-                                <Route exact path="/take-test" component={Test} /> )}
 
+                  <Route
+                    exact
+                    path="/quizSummary"
+                    component={QuizSummary}
+                  ></Route>
+                  <Route
+                    exact
+                    path="/play/instructions"
+                    component={QuizInstructions}
+                  ></Route>
+                  <Route exact path="/demo/quiz" component={play}></Route>
+                  <Route
+                    exact
+                    path="/demo/instructions"
+                    component={demoInstructions}
+                  ></Route>
+                  <Route exact path="/Profile" component={profile}></Route>
+                  <Route
+                    exact
+                    path="/update-profile"
+                    component={updateprofile}
+                  ></Route>
 
-
-
-
-
-
-
-
-
-
-
-
-
+                  {localStorage.getItem("takeTest") === "true" &&
+                    localStorage.getItem("times") === "1" && (
+                      <Route exact path="/take-test" component={Test} />
+                    )}
 
                   {/* Personality Test */}
                   <Route
@@ -148,12 +163,22 @@ const App = () => {
                     path="/personalityTest/takeTest"
                     component={PersonalityTest}
                   ></Route>
-                   <Route  exact path="/calendar" component={calendar}></Route>
+                  <Route exact path="/calendar" component={calendar}></Route>
                   <Route
                     exact
                     path="/personalityTest/testResult"
                     component={TestResult}
                   ></Route>
+                  <Route
+                    exact
+                    path="/PDF"
+                    component={PDF}
+                  ></Route>
+                  {/* Chatbot */}
+                  <Route exact path="/Chatbot" component={Chatbot}></Route>
+                  {localStorage.getItem("takeTest") === "true" &&
+                               localStorage.getItem("times") === "1" && (
+                                 <Route exact path="/take-test" component={Test} /> )}
                 </Switch>
               </div>
             </div>

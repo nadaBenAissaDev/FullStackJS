@@ -12,6 +12,7 @@ import PropTypes from 'prop-types';
 import M from 'materialize-css';
 import classnames from 'classnames';
 import { Helmet } from 'react-helmet';
+import Navbar  from '../../Layouts/Navbar';
 
 //import Loader from '../common/Loader';
 
@@ -421,12 +422,12 @@ import isEmpty from '../../validation/is-empty';
                       
                   
                       <div className="option-container">
-                            <p onClick={this.handleOptionClick} className="option">{currentQuestion.opt1}</p>
-                            <p onClick={this.handleOptionClick} className="option">{currentQuestion.opt2}</p>
+                            <p onClick={this.handleOptionClick} className="option">{currentQuestion.optionA}</p>
+                            <p onClick={this.handleOptionClick} className="option">{currentQuestion.optionB}</p>
                         </div>
                         <div className="option-container">
-                            <p onClick={this.handleOptionClick} className="option">{currentQuestion.opt3}</p>
-                            <p onClick={this.handleOptionClick} className="option">{currentQuestion.opt4}</p>
+                            <p onClick={this.handleOptionClick} className="option">{currentQuestion.optionC}</p>
+                            <p onClick={this.handleOptionClick} className="option">{currentQuestion.optionD}</p>
                         </div>
                     </div>
 
@@ -464,11 +465,14 @@ import isEmpty from '../../validation/is-empty';
         }
 
         return (
+            <>
+            <Navbar />
             <div id="quiz">
                 <Header/>
                 {/* {this.state.type ? <h3>{this.state.type}</h3> : <span>No Type found</span>} */}
                 {quizContent}
             </div>
+            </>
         );
     }
 }

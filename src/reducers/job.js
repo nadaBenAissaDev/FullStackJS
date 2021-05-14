@@ -58,7 +58,9 @@ export default function(state = initialState, action){
         case JOB_DELETED: 
             return {
                 ...state,
-                jobs: state.jobs.filter(job => job._id !== payload),
+                // jobs: state.jobs.filter(job => job._id !== payload.id),
+                jobs: payload,
+                //jobs: state.jobs.map(job => job._id === payload.id ? {...job, activate: payload.activate} : job),
                 loading: false                
             }
         case GET_JOBS_ACTIVATED:
@@ -100,7 +102,8 @@ export default function(state = initialState, action){
         case ADD_COMMENT:
             return {
                 ...state,
-                job: {...state.job, comments: payload},
+                //jobs: {...state.job, comments: payload},
+                jobs: state.jobs.map(job => job._id === payload.id ? {...job, comments: payload.comments} : job),
                 loading: false
             }
         case REMOVE_COMMENT:

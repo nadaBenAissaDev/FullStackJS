@@ -14,7 +14,6 @@ import {
   import {deactivateJob} from '../../../actions/job';
   import {activateJob} from '../../../actions/job';
   import {deleteJob} from '../../../actions/job';
-  import {Button, ButtonToolBar} from 'react-bootstrap';
   import Popup from './Popup';
 
 const JobItemNonApp = ({

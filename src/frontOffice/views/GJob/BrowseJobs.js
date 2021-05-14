@@ -7,8 +7,8 @@ import {getJobs} from '../../../actions/job';
 import JobDetails from 'backend/views/GJob/JobDetails';
 import PropTypes from 'prop-types';
 import JobItem from './JobItem';
-import Navbar from 'frontOffice/Layouts/Navbar';
-
+import Navbar  from '../../Layouts/Navbar';
+import Footer  from '../../Layouts/Footer';
 
 const BrowseJobs = ({getJobs, job: {jobs, loading}}) => {
   useEffect(() => {
@@ -17,7 +17,7 @@ const BrowseJobs = ({getJobs, job: {jobs, loading}}) => {
 
   return loading ? <Spinner/>  :(
         <Fragment>
-        <Navbar/>                 
+          <Navbar />
         <Header/>
         <section className="ftco-section bg-light">
         <div className="container">
@@ -106,7 +106,7 @@ const BrowseJobs = ({getJobs, job: {jobs, loading}}) => {
             </div>
         </div>
     </section>
-
+    <Footer />
     </Fragment>
     );
 };
