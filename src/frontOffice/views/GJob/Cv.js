@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
 import PDF from './PDF';
-import jsPDF from 'jspdf';
 const Cv = (props) => {
     let history = useHistory();
     const [personnalInfo,setpersonnalInfo]= useState({
