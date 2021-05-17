@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import axios from 'axios';
 
 
-
+import {API_BASE_URL} from 'actions/types'
 
 
 import { Component } from 'react';
@@ -94,7 +94,7 @@ const Reclamation = props => (
     }
    
     componentDidMount() {
-      axios.get("http://localhost:5000/users")
+      axios.get(API_BASE_URL + "/users")
         .then(response => {
           this.setState({ result: response.data.result})
           console.log(response.data.result);
@@ -114,7 +114,7 @@ const Reclamation = props => (
       // const id = "609087de6de5c07e7c172db3";
       //  const profile = id;
       
-      // const response = await fetch("http://localhost:5000/rec/"+{id}, {
+      // const response = await fetch(API_BASE_URL + "/rec/"+{id}, {
       //   method: "POST",
       //   headers: {
       //     "Content-Type": "application/json"
@@ -129,7 +129,7 @@ const Reclamation = props => (
       // }
   //  }
     recommandationfc(id) {
-      axios.post("http://localhost:5000/rec/"+{id})
+      axios.post(API_BASE_URL + "/rec/"+{id})
         .then(response => { console.log(response.data)});
        // window.location = '/admin/ReclamationDetails';
   
@@ -137,7 +137,7 @@ const Reclamation = props => (
    
   recommandationfct(id) {
    
-    axios.post("http://localhost:5000/rec/609087de6de5c07e7c172db3")
+    axios.post(API_BASE_URL + "/rec/609087de6de5c07e7c172db3")
       .then(response => { console.log(response.data)
         
       });

@@ -12,7 +12,7 @@ import {
   Container,
   Col,
 } from "reactstrap";
-
+import {API_BASE_URL} from 'actions/types'
 function UpdateProfile({ history,index,/* token*/ match: { params } }) {
   let oldUser = localStorage.getItem("user")
   let oldCompany =localStorage.getItem("company")
@@ -27,7 +27,7 @@ function UpdateProfile({ history,index,/* token*/ match: { params } }) {
   const submitHandler = (e) => {
     e.preventDefault();
     
-  axios.put("http://localhost:5000/api/profile/update", {Us:id,firstname,lastname,email,company})
+  axios.put(API_BASE_URL + "/api/profile/update", {Us:id,firstname,lastname,email,company})
     .then((response) => {
        alert(response.data.msg);
    

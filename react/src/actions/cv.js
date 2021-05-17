@@ -2,7 +2,8 @@ import axios from 'axios';
 import { setAlert} from './alert';
 import {
     ERROR_ADD_CV,
-    ADD_CV
+    ADD_CV,
+    API_BASE_URL
 } from './types';
 
 // Add Cv
@@ -73,7 +74,7 @@ export const addCv = ({linkedin,
         langlevelTwo}); //stringify() convertit une valeur JavaScript en chaîne JSON
 
     try{
-      const res = await axios.post(`http://localhost:5000/api/Cv/addCv/${id}`, body, config);
+      const res = await axios.post(API_BASE_URL + `/api/Cv/addCv/${id}`, body, config);
 
       dispatch({
           type: ADD_CV,

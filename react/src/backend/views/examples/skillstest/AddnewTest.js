@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Button } from "reactstrap";
-
+import {API_BASE_URL} from "actions/types";
 function AddTest({ history,/* token,*/ match: { params, url } }) {
   console.log(params);
   const maxQuestions =params.numberOfQuestions;
@@ -11,7 +11,7 @@ function AddTest({ history,/* token,*/ match: { params, url } }) {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:5000/api/test/create", {
+    axios.post(API_BASE_URL + "/api/test/create", {
         numberOfQuestions: parseInt(numberOfQuestions),
         validity,
         /*token,*/

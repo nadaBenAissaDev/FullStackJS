@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Button } from "reactstrap";
-
+import {API_BASE_URL} from 'actions/types'
 function AddQuestion({ history/*, token*/ }) {
   const [question, setQuestion] = useState("");
   const [opt1, setOpt1] = useState("");
@@ -12,7 +12,7 @@ function AddQuestion({ history/*, token*/ }) {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:5000/api/question/add", {
+    axios.post(API_BASE_URL + "/api/question/add", {
         question,
         opt1,
         opt2,

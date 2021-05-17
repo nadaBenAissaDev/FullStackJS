@@ -5,7 +5,7 @@ import SingleTest2 from "./singletest2";
 import Popup from "../../../components/popup/popup";
 //import Form from 'muicss/lib/react/form';
 import AddIcon from '@material-ui/icons/Add';
-
+import {API_BASE_URL} from 'actions/types'
 import {
  DropdownMenu,
  DropdownItem,
@@ -42,7 +42,7 @@ function ArchivedTest({ /*token,*/ history, match: { url } }) {
  
 
   useEffect(() => {
-  axios.get("http://localhost:5000/api/test/archive")
+  axios.get(API_BASE_URL + "/api/test/archive")
   .then((response) => {
       console.log(response.data)
     setTests(response.data);

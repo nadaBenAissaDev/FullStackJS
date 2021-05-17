@@ -6,7 +6,7 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 import '../../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-
+import {API_BASE_URL} from 'actions/types'
 import Header from '../../Layouts/Header';
 import Navbar  from '../../Layouts/Navbar';
 //import 'react-notifications/lib/notifications.css';
@@ -66,7 +66,7 @@ export default class NewReclamation extends Component {
   };*/
 
   componentDidMount() {
-    axios.get('http://localhost:5000/user/')
+    axios.get(API_BASE_URL + '/user/')
       .then(response => {
         if (response.data.length > 0) {
           this.setState({
@@ -137,7 +137,7 @@ export default class NewReclamation extends Component {
 
     console.log(reclamation);
 
-    axios.post('http://localhost:5000/Reclamation/add', reclamation)
+    axios.post(API_BASE_URL + '/Reclamation/add', reclamation)
       .then(res => console.log(res.data));
 
     window.location = '/Reclamations';

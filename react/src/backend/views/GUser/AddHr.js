@@ -2,7 +2,7 @@ import React, { useState } from "react";
 // reactstrap components
 import { Button, Card, CardHeader, Container, Row } from "reactstrap";
 import { Link } from "react-router-dom";
-
+import {API_BASE_URL} from 'actions/types'
 import axios from "axios";
 
 import sgMail from '@sendgrid/mail';
@@ -31,7 +31,7 @@ function AddHr({ history }) {
   const submitHandler = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/user/add", {
+      .post(API_BASE_URL + "/user/add", {
         firstname,
         lastname,
         email,

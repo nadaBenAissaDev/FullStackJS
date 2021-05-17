@@ -4,7 +4,7 @@ import SingleQuestion from "./SingleQuestion";
 import axios from "axios";
 import Header from '../../Layouts/Header';
 import Navbar  from '../../Layouts/Navbar';
-
+import {API_BASE_URL} from 'actions/types'
 import "./componentsStyles/Test.css";
 const jwt = require('jsonwebtoken');
 function Test({ history }) {
@@ -46,7 +46,7 @@ function Test({ history }) {
     }
     console.log(ansArray);
     axios
-      .post("http://localhost:5000/api/result/submitTest", {email, questions: ansArray })
+      .post(API_BASE_URL + "/api/result/submitTest", {email, questions: ansArray })
       .then((response) => {
         console.log(response);
         alert(response.data.msg);

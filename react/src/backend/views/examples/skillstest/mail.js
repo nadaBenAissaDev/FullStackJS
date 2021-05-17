@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-
+import {API_BASE_URL} from 'actions/types'
   import {
     Button,
     Card,
@@ -20,7 +20,7 @@ const Mail  = ()=>{
     const [subject,setSubject] = useState("");
 
     const PostData = ()=>{
-        fetch("http://localhost:5000/send",{
+        fetch(API_BASE_URL + "/send",{
             method:"post",
             headers:{
                 "Content-Type":"application/json"

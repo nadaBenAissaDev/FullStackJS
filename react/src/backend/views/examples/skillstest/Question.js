@@ -6,14 +6,14 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
 } from "reactstrap";
-
+import {API_BASE_URL} from 'actions/types'
 
 function Question({ question,history, index /*, token*/ }) {
 
 
 
   const handleDelete = () => {
-    axios.delete("http://localhost:5000/api/question/delete", { data: {/*  token, */id: question._id } })
+    axios.delete(API_BASE_URL + "/api/question/delete", { data: {/*  token, */id: question._id } })
       .then((response) => {
         alert(response.data.msg);
         window.location.reload(true);

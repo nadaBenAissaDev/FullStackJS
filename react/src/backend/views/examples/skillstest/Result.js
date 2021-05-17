@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import SingleResult from "./SingleResult";
-//import {useParams} from "react-router-dom";
+import {API_BASE_URL} from 'actions/types'
 import {
   Row,
 Container,
@@ -26,7 +26,7 @@ function Result({ history,props ,match: {params}/*, token */,url}) {
 
 
   useEffect((props) => {
-    axios.post("http://localhost:5000/api/result/listResult", {/* token,*/ testId })
+    axios.post(API_BASE_URL + "/api/result/listResult", {/* token,*/ testId })
       .then((response) => { 
         //console.log(response.data)
         setResult(response.data);

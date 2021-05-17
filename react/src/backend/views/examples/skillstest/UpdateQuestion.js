@@ -11,7 +11,7 @@ import {
   Container,
   Col,
 } from "reactstrap";
-
+import {API_BASE_URL} from 'actions/types'
 function UpdateQuestion({ history,index,/* token*/ match: { params } }) {
   let oldQuestion = localStorage.getItem("question")
   oldQuestion = JSON.parse(oldQuestion);
@@ -25,7 +25,7 @@ function UpdateQuestion({ history,index,/* token*/ match: { params } }) {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    axios.put("http://localhost:5000/api/question/update", {
+    axios.put(API_BASE_URL + "/api/question/update", {
         id,
         question,
         opt1,

@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import {API_BASE_URL} from '../actions/types'
 import {
  CALENDAR_LOADING,
  ADD_CALENDAR,
@@ -11,26 +11,9 @@ import {
 
   // SEARCH_EVENT,
 } from "./types";
-/*
-export const addCalendar = (eventData) => async dispatch => {
-  try{
-      const res= await axios.post('http://localhost:5000/calendar/add',eventData);
-      dispatch({
-          type: ADD_CALENDAR,
-          payload: res.data
-      });
-  }
-  catch(err){
-      dispatch({
-          type: GET_ERRORS,
-          payload: {msg: err.response.statusText, status: err.response.status}
-      });
-  }
-}*/
-
 export const addCalendar = (eventData) => dispatch => {
   dispatch(clearErrors()); 
-  axios.post("/calendar/add", eventData)
+  axios.post(API_BASE_URL +"/calendar/add", eventData)
     .then(res =>
         dispatch({
         type: ADD_CALENDAR,
@@ -54,7 +37,7 @@ export const addCalendar = (eventData) => dispatch => {
 export const getCalendar = () => dispatch => {
   dispatch(setCalendarLoading());
   axios
-    .get('http://localhost:5000/calendar')
+    .get(API_BASE_URL + '/calendar')
     .then(res => {
       dispatch({
         type: GET_CALENDAR,
@@ -78,7 +61,7 @@ export const getCalendar = () => dispatch => {
 
 export const editCalendar = (eventData) => dispatch => {
   dispatch(clearErrors());
-  axios.put(`http://localhost:5000/calendar/update`, eventData)
+  axios.put(API_BASE_URL + `/calendar/update`, eventData)
     .then(res =>
       dispatch({
         type: EDIT_CALENDAR,

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 // reactstrap components
 import { Button, Card, CardHeader, Container, Row } from "reactstrap";
 import { Link } from "react-router-dom";
-
+import {API_BASE_URL} from 'actions/types'
 import axios from "axios";
 import { Component } from "react";
 
@@ -23,7 +23,7 @@ export default class DetailsPersonalityTest extends Component {
   componentDidMount() {
     const id = this.props.match.params.id;
     axios
-      .get(`http://localhost:5000/PersonalityTest/${id}`)
+      .get(API_BASE_URL + `/PersonalityTest/${id}`)
       .then((res) => {
         if (res.data) {
           this.setState({
@@ -58,33 +58,6 @@ export default class DetailsPersonalityTest extends Component {
       });
   }
 
-
-  // submitHandler = (e) => {
-  //   e.preventDefault();
-  //   const id = this.props.match.params.id;
-  //   const {
-  //     question,
-  //     optionA,
-  //     optionB,
-  //     optionC,
-  //     optionD,
-  //   } = this.state.personalitytest;
-  //   axios
-  //     .post("http://localhost:5000/PersonalityTest/add", {
-  //       question,
-  //       optionA,
-  //       optionB,
-  //       optionC,
-  //       optionD
-  //     })
-  //     .then((response) => {
-  //       alert("Test question Updated");
-  //       history.push("/admin/personalityTestList");
-  //     })
-  //     .catch((err) => {
-  //       alert(err.response.data.msg);
-  //     });
-  // };
 
 
 
@@ -334,7 +307,7 @@ export default class DetailsPersonalityTest extends Component {
 
 //   componentDidMount() {
 //     axios
-//       .get('http://localhost:5000/PersonalityTest/'+this.props.match.params.id)
+//     
 //       .then((response) => {
 //         this.setState({
 //           id: response.data.id,
@@ -349,17 +322,7 @@ export default class DetailsPersonalityTest extends Component {
 //         console.log(error);
 //       });
 
-//     // axios.get('http://localhost:5000/users/')
-//     //   .then(response => {
-//     //     if (response.data.length > 0) {
-//     //       this.setState({
-//     //         users: response.data.map(user => user.username),
-//     //       })
-//     //     }
-//     //   })
-//     //   .catch((error) => {
-//     //     console.log(error);
-//     //   })
+//    
 //   }
 
 //   onChangeQuestion(e) {
@@ -402,7 +365,6 @@ export default class DetailsPersonalityTest extends Component {
 
 //     console.log(personalitytests);
 
-//     axios.post('http://localhost:5000/exercises/update/'+this.props.match.params.id, personalitytests)
 //       .then(res => console.log(res.data));
 
 //     window.location = '/admin/personalityTestList';

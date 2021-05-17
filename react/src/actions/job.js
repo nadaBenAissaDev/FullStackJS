@@ -16,13 +16,14 @@ import {
     JOB_APPROVED,
     ADD_JOB,
     ADD_ERROR,
+    API_BASE_URL,
     REMOVE_COMMENT,ADD_COMMENT
 } from './types';
 
 //Get list jobs candidate
 export const getJobs = () => async dispatch => {
     try{
-        const res= await axios.get('http://localhost:5000/api/Job/');
+        const res= await axios.get(API_BASE_URL +'/api/Job/');
         dispatch({
             type: GET_JOBS,
             payload: res.data
@@ -38,7 +39,7 @@ export const getJobs = () => async dispatch => {
 //Get list jobs HR approved by admin and created by the connected HR
 export const getJobsHR = () => async dispatch => {
     try{
-        const res= await axios.get('http://localhost:5000/api/JobHR');
+        const res= await axios.get(API_BASE_URL + '/api/JobHR');
         dispatch({
             type: GET_JOBSHR,
             payload: res.data
@@ -54,7 +55,7 @@ export const getJobsHR = () => async dispatch => {
 //Get list activated jobs HR approved by admin and created by the connected HR 
 export const getJobsHRAct = () => async dispatch => {
     try{
-        const res= await axios.get('http://localhost:5000/api/JobHR/ActivatedJob');
+        const res= await axios.get(API_BASE_URL + '/api/JobHR/ActivatedJob');
         dispatch({
             type: GET_JOBS_ACTIVATED,
             payload: res.data
@@ -70,7 +71,7 @@ export const getJobsHRAct = () => async dispatch => {
 //Get list deactivated jobs HR approved by admin and created by the connected HR 
 export const getJobsHRDeact = () => async dispatch => {
     try{
-        const res= await axios.get('http://localhost:5000/api/JobHR/DeActivateJob');
+        const res= await axios.get(API_BASE_URL + '/api/JobHR/DeActivateJob');
         dispatch({
             type: GET_JOBS_DEACTIVATED,
             payload: res.data
@@ -86,7 +87,7 @@ export const getJobsHRDeact = () => async dispatch => {
 //Get list to approved by admin
 export const getJobsnonAppAdmin = () => async dispatch => {
     try{
-        const res= await axios.get('http://localhost:5000/api/JobAdmin/nonApp');
+        const res= await axios.get(API_BASE_URL + '/api/JobAdmin/nonApp');
         dispatch({
             type: GET_JOBS_NONAPP,
             payload: res.data
@@ -103,7 +104,7 @@ export const getJobsnonAppAdmin = () => async dispatch => {
 //Get list to approved by admin
 export const getJobsnonApp = () => async dispatch => {
     try{
-        const res= await axios.get('http://localhost:5000/api/JobAdmin/nonApp');
+        const res= await axios.get(API_BASE_URL + '/api/JobAdmin/nonApp');
         dispatch({
             type: GET_JOBS_NONAPP,
             payload: res.data
@@ -121,7 +122,7 @@ export const getJobsnonApp = () => async dispatch => {
 //delete job by HR
 export const deleteJob = (id) => async dispatch => {
     try{
-        const res= await axios.get(`http://localhost:5000/api/JobHR/${id}`);
+        const res= await axios.get(API_BASE_URL + `/api/JobHR/${id}`);
         dispatch({
             type: JOB_DELETED,
             payload: res.data
@@ -137,7 +138,7 @@ export const deleteJob = (id) => async dispatch => {
 //Approved job by admin
 export const ApprovedJob = (id) => async dispatch => {
     try{
-        const res= await axios.put(`http://localhost:5000/api/JobAdmin/approved/${id}`);
+        const res= await axios.put(API_BASE_URL + `/api/JobAdmin/approved/${id}`);
         dispatch({
             type: JOB_APPROVED,
             payload: res.data
@@ -153,7 +154,7 @@ export const ApprovedJob = (id) => async dispatch => {
 //deactivate Job by HR
 export const deactivateJob = (id) => async dispatch => {
     try{
-        const res= await axios.put(`http://localhost:5000/api/JobHR/deactivate/${id}`);
+        const res= await axios.put(API_BASE_URL + `/api/JobHR/deactivate/${id}`);
         dispatch({
             type: JOB_DEACTIVATED,
             payload: res.data
@@ -169,7 +170,7 @@ export const deactivateJob = (id) => async dispatch => {
 //activate Job by HR
 export const activateJob = (id) => async dispatch => {
     try{
-        const res= await axios.put(`http://localhost:5000/api/JobHR/activate/${id}`);
+        const res= await axios.put(API_BASE_URL + `/api/JobHR/activate/${id}`);
         dispatch({
             type: JOB_ACTIVATED,
             payload: res.data
@@ -185,7 +186,7 @@ export const activateJob = (id) => async dispatch => {
 //Get detail job candidate HR
 export const getJob = id => async dispatch => {
     try{
-        const res= await axios.get(`http://localhost:5000/api/Job/${id}`);
+        const res= await axios.get(API_BASE_URL + `/api/Job/${id}`);
         dispatch({
             type: GET_JOB,
             payload: res.data
@@ -208,7 +209,7 @@ export const addJob = ({title,description,studyLevel,experience,location,salary,
     const body = JSON.stringify({title,description,studyLevel,experience,location,salary,contractType,requirements,skills}); //stringify() convertit une valeur JavaScript en chaîne JSON
 
     try{
-      const res = await axios.post('http://localhost:5000/api/Job', body, config);
+      const res = await axios.post(API_BASE_URL + '/api/Job', body, config);
 
       dispatch({
           type: ADD_JOB,
@@ -227,7 +228,7 @@ export const addJob = ({title,description,studyLevel,experience,location,salary,
 //UPDATE LIKES
 export const addLike = id => async dispatch => {
     try{
-        const res= await axios.put(`http://localhost:5000/api/Job/like/${id}`);
+        const res= await axios.put(API_BASE_URL + `/api/Job/like/${id}`);
         dispatch({
             type: UPDATE_LIKES,
             payload: {id, likes: res.data}
@@ -244,7 +245,7 @@ export const addLike = id => async dispatch => {
 //remove LIKES
 export const removeLike = id => async dispatch => {
     try{
-        const res= await axios.put(`http://localhost:5000/api/Job/unlike/${id}`);
+        const res= await axios.put(API_BASE_URL + `/api/Job/unlike/${id}`);
         dispatch({
             type: UPDATE_LIKES,
             payload: {id, likes: res.data}
@@ -266,7 +267,7 @@ export const addComment = (jobId, commentData) => async dispatch => {
       }
   };
   try{
-    const res= await axios.post(`http://localhost:5000/api/Job/comment/${jobId}`, commentData, config);
+    const res= await axios.post(API_BASE_URL + `/api/Job/comment/${jobId}`, commentData, config);
     dispatch({
         type: ADD_COMMENT,
         payload: res.data
@@ -284,7 +285,7 @@ export const addComment = (jobId, commentData) => async dispatch => {
   // remove Comment
 export const deleteComment = (jobId, commentId) => async dispatch => {
     try{
-      axios.delete(`http://localhost:5000/api/Job/comment/${jobId}/${commentId}`);
+      axios.delete(API_BASE_URL + `/api/Job/comment/${jobId}/${commentId}`);
        dispatch({
           type: REMOVE_COMMENT,
           payload: commentId

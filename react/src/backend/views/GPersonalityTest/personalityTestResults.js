@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Pagination from "./pagination.js";
 import axios from "axios";
 import "../../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
-
+import {API_BASE_URL} from 'actions/types'
 // //sendmail
 // import sgMail from '@sendgrid/mail';
 // const API_KEY = "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"
@@ -33,7 +33,6 @@ import {
 
  // deleteQuestion(id) {
   //   axios
-  //     .delete("http://localhost:5000/PersonalityTest/" + id)
   //     .then((response) => {
   //       console.log(response.data);
   //     });
@@ -89,7 +88,7 @@ export default class ListQuestions extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/PersonalityTestResults/")
+      .get(API_BASE_URL + "/PersonalityTestResults/")
       .then((response) => {
         this.setState({ questions: response.data });
       })
@@ -100,7 +99,6 @@ export default class ListQuestions extends Component {
 
   // deleteQuestion(id) {
   //   axios
-  //     .delete("http://localhost:5000/PersonalityTest/" + id)
   //     .then((response) => {
   //       console.log(response.data);
   //     });
@@ -113,7 +111,6 @@ export default class ListQuestions extends Component {
   // detailQuestion(id) {
   //   console.log(id);
   //   axios
-  //     .get("http://localhost:5000/PersonalityTest/" + id)
   //     .then((response) => {
   //       console.log(response.data);
 

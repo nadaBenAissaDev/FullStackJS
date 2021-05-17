@@ -7,11 +7,11 @@ import { connect } from 'react-redux';
 import axios from "axios";
 import Header from '../../Layouts/Header';
 import Navbar  from '../../Layouts/Navbar';
-
+import {API_BASE_URL} from 'actions/types'
 class Calender extends Component {
   componentDidMount() {
     this.props.getCalendar();
-    axios.get('http://localhost:5000/calendar')
+    axios.get(API_BASE_URL + '/calendar')
       .then(response => {
         this.setState({ calendars: response.data })
       })
@@ -54,7 +54,7 @@ class Calender extends Component {
 
                         <div className="center-wrap">
                           <a onClick={this.handleOneIsEmpty}
-                            href={this.props.calendar ? `http://localhost:5000/${this.props.calendar.fileOne}` : '#'}
+                            href={this.props.calendar ? API_BASE_URL + `/${this.props.calendar.fileOne}` : '#'}
                             className="btn-a"
                           >
                             <div className="button">
@@ -68,7 +68,7 @@ class Calender extends Component {
 
                         <div className="center-wrap">
                           <a onClick={this.handleTwoIsEmpty}
-                            href={this.props.calendar ? `http://localhost:5000/${this.props.calendar.fileTwo}` : '#'}
+                            href={this.props.calendar ? API_BASE_URL + `/${this.props.calendar.fileTwo}` : '#'}
                             className="btn-a"
                           >
                             <div className="button">

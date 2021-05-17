@@ -6,7 +6,7 @@ import React, { useState,useEffect, useContext } from "react";
 import axios from "axios";
 import Header from '../../Layouts/Header';
 import Navbar  from '../../Layouts/Navbar';
-
+import {API_BASE_URL} from 'actions/types'
 function QuizInstructions({ history }) {
 
   const [email, setEmail] = useState("");
@@ -25,7 +25,7 @@ function QuizInstructions({ history }) {
 
   const submitHandler = (e) => {
     e.preventDefault();
-     axios.post("http://localhost:5000/api/result/takeTest",{email, pin: parseInt(pin) })
+     axios.post(API_BASE_URL + "/api/result/takeTest",{email, pin: parseInt(pin) })
       .then((response) => {
         localStorage.setItem(
           "questions",

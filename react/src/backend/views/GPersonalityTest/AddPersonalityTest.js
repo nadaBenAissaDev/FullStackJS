@@ -2,7 +2,7 @@ import React, { useState } from "react";
 // reactstrap components
 import { Button, Card, CardHeader, Container, Row } from "reactstrap";
 import { Link } from "react-router-dom";
-
+import {API_BASE_URL} from 'actions/types'
 import axios from "axios";
 
 function AddPersonalityTest({ history }) {
@@ -17,7 +17,7 @@ function AddPersonalityTest({ history }) {
   const submitHandler = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/PersonalityTest/add", {
+      .post(API_BASE_URL + "/PersonalityTest/add", {
         question,
         optionA,
         optionB,
@@ -320,7 +320,7 @@ export default AddPersonalityTest;
 //       console.log(data)
 
 //     // axios
-//     //   .post("http://localhost:5000/PersonalityTest/add", {
+//     //   
 //     //     question,
 //     //     optionA,
 //     //     optionB,

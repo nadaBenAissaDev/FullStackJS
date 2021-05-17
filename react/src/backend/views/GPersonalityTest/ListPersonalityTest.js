@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Pagination from "./pagination.js";
 import axios from "axios";
 import "../../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
-
+import {API_BASE_URL} from 'actions/types'
 import { Component } from "react";
 import {
   Badge,
@@ -75,7 +75,7 @@ export default class ListQuestions extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/PersonalityTest/")
+      .get(API_BASE_URL + "/PersonalityTest/")
       .then((response) => {
         this.setState({ questions: response.data });
       })
@@ -86,7 +86,7 @@ export default class ListQuestions extends Component {
 
   deleteQuestion(id) {
     axios
-      .delete("http://localhost:5000/PersonalityTest/" + id)
+      .delete(API_BASE_URL + "/PersonalityTest/" + id)
       .then((response) => {
         console.log(response.data);
       });
@@ -99,7 +99,7 @@ export default class ListQuestions extends Component {
   detailQuestion(id) {
     console.log(id);
     axios
-      .get("http://localhost:5000/PersonalityTest/" + id)
+      .get(API_BASE_URL + "/PersonalityTest/" + id)
       .then((response) => {
         console.log(response.data);
 

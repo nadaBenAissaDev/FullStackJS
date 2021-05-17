@@ -3,6 +3,7 @@
 import React, { useEffect,useState } from "react";
 import axios from 'axios';
 import Header from "../Layouts/Header";
+import {API_BASE_URL} from 'actions/types'
 // reactstrap components
 import {
   Button,
@@ -36,7 +37,7 @@ useEffect(()=>{
        console.log(user.id);
     setUserId(user.id)
     console.log(userId);
-    axios.post("http://localhost:5000/api/profile/getuser",{ UserId: userId})
+    axios.post(API_BASE_URL + "/api/profile/getuser",{ UserId: userId})
     .then(response => {
       console.log(response) ;
          setFirstname(response.data.firstname);

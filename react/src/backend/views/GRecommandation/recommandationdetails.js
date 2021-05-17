@@ -64,7 +64,6 @@
   
 //     componentDidMount() {
 //      const id = this.props.match.params.id;
-//       axios.post("http://localhost:5000/rec/609087de6de5c07e7c172db3")
 //         .then(response => {
 //             console.log(response)
 //             console.log("papa",response.data._id_profile);
@@ -264,7 +263,7 @@ import React, { useEffect, useState } from "react";
 import { Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import axios from 'axios';
-
+import {API_BASE_URL} from 'actions/types'
 // reactstrap components
 import {
   Badge,
@@ -323,7 +322,7 @@ function Recommandationdetails(){
     
       useEffect(() => {
        //const id = this.props.match.params.id;
-        axios.post("http://localhost:5000/rec/609087de6de5c07e7c172db3")
+        axios.post(API_BASE_URL + "/rec/609087de6de5c07e7c172db3")
           .then(response => {
               //console.log("maaaaaa",response.data.score);
              setScore(response.data.score);

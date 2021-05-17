@@ -5,6 +5,7 @@ import SingleTest from "./singletest";
 import Popup from "../../../components/popup/popup";
 //import Form from 'muicss/lib/react/form';
 import AddIcon from '@material-ui/icons/Add';
+import {API_BASE_URL} from 'actions/types'
 //import Search from "./search";
 import {
   Button,
@@ -26,6 +27,7 @@ InputGroup,
   Row,
   Col,
 } from "reactstrap";
+import { API_BASE_URL } from "actions/types";
 
 
 function CreateTest({ /*token,*/ history, match: { url } }) {
@@ -40,7 +42,7 @@ function CreateTest({ /*token,*/ history, match: { url } }) {
  
 
   useEffect(() => {
-  axios.get("http://localhost:5000/api/test/nonarchive")
+  axios.get(API_BASE_URL + "/api/test/nonarchive")
   .then((response) => {
     setTests(response.data);
     const a=JSON.parse(JSON.stringify(response.data.map((test, index) => {
@@ -55,7 +57,7 @@ function CreateTest({ /*token,*/ history, match: { url } }) {
 
                
 
-    // axios.get("http://localhost:5000/api/test/getAlltests",/* { token }*/)
+    // axios.get(API_BASE_URL + "/api/test/getAlltests",/* { token }*/)
     //   .then((response) => {
     //    // console.log(response);
     //     setTests(response.data);
@@ -88,7 +90,7 @@ const reload=()=>window.location.reload(false);
 
   const submitHandler = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:5000/api/test/create", {
+    axios.post(API_BASE_URL + "/api/test/create", {
         numberOfQuestions: parseInt(numberOfQuestions),
         validity,
         /*token,*/

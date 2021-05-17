@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-
+import {API_BASE_URL} from 'actions/types'
 import {
   Button,
   Card,
@@ -27,7 +27,7 @@ function UpdateProfile({ history,index,/* token*/ match: { params } }) {
   const submitHandler = (e) => {
     e.preventDefault();
     
-  axios.put("http://localhost:5000/api/profile/update", {Us:id,firstname,lastname,email,company})
+  axios.put(API_BASE_URL + "/api/profile/update", {Us:id,firstname,lastname,email,company})
     .then((response) => {
        alert(response.data.msg);
    

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios";
-
+import {API_BASE_URL} from 'actions/types'
 import { addCalendar, getCalendar, setIsModifiedCalendarLoading } from '../../../actions/calendarActions';
 import {
   Card,
@@ -75,7 +75,7 @@ class calendar extends Component {
     if(this.state.fileOneLoaded && this.state.fileTwoLoaded)
     {
        // this.props.addCalendar(updateArticle);
-        axios.post('http://localhost:5000/calendar/add', calendar)
+        axios.post(API_BASE_URL + '/calendar/add', calendar)
         .then(res => console.log(res.data));
     
         this.props.history.push('/');
@@ -155,7 +155,7 @@ class calendar extends Component {
                     <Input type="file" name="fileOne" onChange={this.fileSelectedHandler} />
                   </Col>
                   <Col xs="12" md="9">
-                    <a href={`http://localhost:5000/${this.state.fileOne}`}>{this.state.fileOne}</a>
+                    <a href={API_BASE_URL + `/${this.state.fileOne}`}>{this.state.fileOne}</a>
                   </Col>
                 </FormGroup>
 
@@ -167,7 +167,7 @@ class calendar extends Component {
                     <Input type="file" name="fileTwo" onChange={this.fileTwoSelectedHandler} />
                   </Col>
                   <Col xs="12" md="9">
-                    <a href={`http://localhost:5000/${this.state.fileTwo}`}>{this.state.fileTwo}</a>
+                    <a href={API_BASE_URL + `/${this.state.fileTwo}`}>{this.state.fileTwo}</a>
                   </Col>
                 </FormGroup>
                 

@@ -22,7 +22,7 @@
 // }
 
 // export default SingleTest;
-
+import {API_BASE_URL} from 'actions/types'
 import React,{useState} from "react";
 //import {Link} from "react-router-dom";
 import axios from "axios";
@@ -56,7 +56,7 @@ function SingleTest({ test, history, index, /*token*/ url}) {
   };
 
      const handledeletep =() =>{
-       axios.delete(`http://localhost:5000/api/test/${test._id}`)
+       axios.delete(API_BASE_URL + '/api/test/${test._id}`)
        .then((response) => {
         //console.log(response.data);
       
@@ -71,7 +71,7 @@ function SingleTest({ test, history, index, /*token*/ url}) {
   
 const handleClick2 =()=>{
   
-   axios.put(`http://localhost:5000/api/test/archive/${test._id}`)
+   axios.put(API_BASE_URL + '/api/test/archive/${test._id}`)
    .then((response) => {
      //console.log(response.data);
      alert("Successfully archived Test");

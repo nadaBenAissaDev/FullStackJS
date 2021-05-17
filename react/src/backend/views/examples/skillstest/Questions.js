@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Question from "./Question";
 import Popup from "../../../components/popup/popupq";
-import { Grid, } from '@material-ui/core';
+import {API_BASE_URL} from 'actions/types'
 import AddIcon from '@material-ui/icons/Add';
 import Pagination from './pagination';
 import {
@@ -28,7 +28,7 @@ function Questions({ /*token,*/ history }) {
   const reload=()=>window.location.reload(false);
   const submitHandler = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:5000/api/question/add", {
+    axios.post(API_BASE_URL + "/api/question/add", {
         question,
         opt1,
         opt2,
@@ -68,7 +68,7 @@ const currentQuestions=questions.slice(indexcOfFirstQuestion,indexOfLastQuestion
 
 
   useEffect(() => {
-    axios.post("http://localhost:5000/api/question/" /*, { token }*/)
+    axios.post(API_BASE_URL + "/api/question/" /*, { token }*/)
       .then((response) => {
         setQuestions(response.data);
       })

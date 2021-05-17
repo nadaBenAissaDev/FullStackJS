@@ -5,7 +5,7 @@ import axios from 'axios';
 import '../../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { Button } from "reactstrap";
 import Pagination from './pagination.js';
-
+import {API_BASE_URL} from 'actions/types'
 
 // reactstrap components
 import {
@@ -107,7 +107,7 @@ export default class Reclamations extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/Reclamation/')
+    axios.get(API_BASE_URL + '/Reclamation/')
       .then(response => {
         this.setState({ reclamations: response.data })
       })
@@ -117,7 +117,7 @@ export default class Reclamations extends Component {
   }
 
   deleteReclamation(id) {
-    axios.delete('http://localhost:5000/Reclamation/'+id)
+    axios.delete(API_BASE_URL + '/Reclamation/'+id)
       .then(response => { console.log(response.data)});
 
     this.setState({
@@ -126,7 +126,7 @@ export default class Reclamations extends Component {
   }
 
   unarchiveReclamation(id) {
-    axios.put('http://localhost:5000/Reclamation/unarchive/'+id)
+    axios.put(API_BASE_URL + '/Reclamation/unarchive/'+id)
       .then(response => { console.log(response.data)});
 
     this.setState({
@@ -135,7 +135,7 @@ export default class Reclamations extends Component {
   }
 
   archiveReclamation(id) {
-    axios.put('http://localhost:5000/Reclamation/archive/'+id)
+    axios.put(API_BASE_URL + '/Reclamation/archive/'+id)
       .then(response => { console.log(response.data)});
 
     this.setState({

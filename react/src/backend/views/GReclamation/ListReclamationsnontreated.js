@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Pagination from './pagination.js';
 import axios from 'axios';
 import '../../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-
+import {API_BASE_URL} from 'actions/types'
 
 import { Component } from 'react';
 //import { Button } from "reactstrap";
@@ -150,7 +150,7 @@ const Reclamation = props => (
     }
   
     componentDidMount() {
-      axios.get('http://localhost:5000/Reclamation/nontreated')
+      axios.get(API_BASE_URL + '/Reclamation/nontreated')
         .then(response => {
           this.setState({ reclamations: response.data })
         })
@@ -165,14 +165,14 @@ const Reclamation = props => (
 
 
     smsReclamation() {
-      axios.post('http://localhost:5000/Reclamation/sms')
+      axios.post(API_BASE_URL + '/Reclamation/sms')
       .then(res => console.log(res.data));
     }
   
 
     //whats
     whatsReclamation() {
-      axios.post('http://localhost:5000/Reclamation/whats')
+      axios.post(API_BASE_URL + '/Reclamation/whats')
       .then(res => console.log(res.data));
     }
   
@@ -180,7 +180,7 @@ const Reclamation = props => (
 
 
     deleteReclamation(id) {
-      axios.delete('http://localhost:5000/Reclamation/'+id)
+      axios.delete(API_BASE_URL + '/Reclamation/'+id)
         .then(response => { console.log(response.data)});
   
       this.setState({
@@ -189,7 +189,7 @@ const Reclamation = props => (
     }
   
     unarchiveReclamation(id) {
-      axios.put('http://localhost:5000/Reclamation/unarchive/'+id)
+      axios.put(API_BASE_URL + '/Reclamation/unarchive/'+id)
         .then(response => { console.log(response.data)});
   
       this.setState({
@@ -199,7 +199,7 @@ const Reclamation = props => (
     }
   
     archiveReclamation(id) {
-      axios.put('http://localhost:5000/Reclamation/archive/'+id)
+      axios.put(API_BASE_URL + '/Reclamation/archive/'+id)
         .then(response => { console.log(response.data)});
   
       this.setState({
@@ -224,7 +224,7 @@ const Reclamation = props => (
     ///deapprouve
 
     approuveReclamation(id) {
-      axios.put('http://localhost:5000/Reclamation/accepter/'+id)
+      axios.put(API_BASE_URL + '/Reclamation/accepter/'+id)
         .then(response => { console.log(response.data)});
         window.location = '/admin/ListReclamations';
   
