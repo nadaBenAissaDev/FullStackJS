@@ -16,7 +16,7 @@ import Navbar from "../Layouts/Navbar";
 const Home = () => {
   return (
     <>
-      <Navbar />
+    <Navbar />
             <div
               className="hero-wrap img"
               style={{ backgroundImage: `url(${bg})` }}
@@ -43,10 +43,10 @@ const Home = () => {
                       {/* CHATBOT */}
                       
                       <p className="mb-4">
-                        Find Job, Employment, and Career Opportunities
+                        <strong>Apply job</strong>, take<strong> online test</strong> and <strong>create resume</strong>
                       </p>
-                      <h1 className="mb-5">
-                        The Eassiest Way to Get Your New Job
+                      <h1 className="mb-">
+                        The Eassiest Way to Find jobs Opportunities
                       </h1>
                       <div className="ftco-counter ftco-no-pt ftco-no-pb">
                         <div className="row">
@@ -103,7 +103,7 @@ const Home = () => {
                       <div className="ftco-search my-md-5">
                         <div className="row">
                           <div className="col-md-12 nav-link-wrap">
-                            <div
+                            {/* <div
                               className="nav nav-pills text-center"
                               id="v-pills-tab"
                               role="tablist"
@@ -132,14 +132,14 @@ const Home = () => {
                               >
                                 Find a Candidate
                               </a>
-                            </div>
-                          </div>
-                          <div className="col-md-12 tab-wrap">
+                            </div>*/}
+                          </div> 
+                          {/* <div className="col-md-12 tab-wrap">
                             <div
                               className="tab-content p-4"
                               id="v-pills-tabContent"
-                            >
-                              <div
+                            > */}
+                              {/* <div
                                 className="tab-pane fade show active"
                                 id="v-pills-1"
                                 role="tabpanel"
@@ -222,7 +222,7 @@ const Home = () => {
                                     </div>
                                   </div>
                                 </form>
-                              </div>
+                              </div> */}
 
                               <div
                                 className="tab-pane fade"
@@ -308,8 +308,8 @@ const Home = () => {
                                   </div>
                                 </form>
                               </div>
-                            </div>
-                          </div>
+                            {/* </div>
+                          </div> */}
                         </div>
                       </div>
                     </div>
@@ -317,89 +317,59 @@ const Home = () => {
                 </div>
               </div>
             </div>
-      <section className="ftco-section ftco-no-pt ftco-no-pb">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <div className="category-wrap">
-                <div className="row no-gutters">
-                  <div className="col-md-2">
-                    <div className="top-category text-center no-border-left">
-                      <h3>
-                        <Link to="#">Website &amp; Software</Link>
-                      </h3>
-                      <span className="icon flaticon-contact"></span>
-                      <p>
-                        <span className="number">143</span>{" "}
-                        <span>Open position</span>
-                      </p>
-                    </div>
+      <section className="ftco-section ftco-no-pt ftco-no-pb" style={{marginTop:'-5rem'}}>
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12">
+            <div className="category-wrap">
+              <div className="row no-gutters">
+                <div className="col-md-2">
+                  <div className="top-category text-center no-border-left">
+                    <h3>Apply job  </h3>
+                    <span className="icon flaticon-contact"></span>
+                    <p><span className="number">143</span> <span>Open <strong>job opportunities</strong> </span></p>
                   </div>
-                  <div className="col-md-2">
-                    <div className="top-category text-center active">
-                      <h3>
-                        <Link to="#">Education &amp; Training</Link>
-                      </h3>
-                      <span className="icon flaticon-mortarboard"></span>
-                      <p>
-                        <span className="number">143</span>{" "}
-                        <span>Open position</span>
-                      </p>
-                    </div>
+                </div>
+                <div className="col-md-2">
+                  <div className="top-category text-center active">
+                    <h3>Online test &amp; Best skills test </h3>
+                    <span className="icon flaticon-mortarboard"></span>
+                    <p><span className="number">14</span> <span>Open test and quiz </span></p>
                   </div>
-                  <div className="col-md-2">
-                    <div className="top-category text-center">
-                      <h3>
-                        <Link to="#">Graphic &amp; UI/UX Design</Link>
-                      </h3>
-                      <span className="icon flaticon-idea"></span>
-                      <p>
-                        <span className="number">143</span>{" "}
-                        <span>Open position</span>
-                      </p>
-                    </div>
+                </div>
+                <div className="col-md-2">
+                  <div className="top-category text-center">
+                    <h3>Intelligent chatbot</h3>
+                    <span className="icon flaticon-idea"></span>
+                    <p><span className="number">143</span> <span>Open chat</span></p>
                   </div>
-                  <div className="col-md-2">
-                    <div className="top-category text-center">
-                      <h3>
-                        <Link to="#">Accounting &amp; Finance</Link>
-                      </h3>
-                      <span className="icon flaticon-accounting"></span>
-                      <p>
-                        <span className="number">143</span>{" "}
-                        <span>Open position</span>
-                      </p>
-                    </div>
+                </div>
+                <div className="col-md-2">
+                  <div className="top-category text-center">
+                    <h3> Chat Room &amp; conversation</h3>
+                    <span className="icon flaticon-accounting"></span>
+                    <p><span className="number">143</span> <span>Open room</span></p>
                   </div>
-                  <div className="col-md-2">
-                    <div className="top-category text-center">
-                      <h3>
-                        <Link to="#">Restaurant &amp; Food</Link>
-                      </h3>
-                      <span className="icon flaticon-dish"></span>
-                      <p>
-                        <span className="number">143</span>{" "}
-                        <span>Open position</span>
-                      </p>
-                    </div>
+                </div>
+                <div className="col-md-2">
+                  <div className="top-category text-center">
+                    <h3><Link to="#"> Create resume  &amp; Pdf </Link></h3>
+                    <span className="icon flaticon-dish"></span>
+                    <p><span className="number">143</span> <span>Open pdf</span></p>
                   </div>
-                  <div className="col-md-2">
-                    <div className="top-category text-center">
-                      <h3>
-                        <Link to="#">Health &amp; Hospital</Link>
-                      </h3>
-                      <span className="icon flaticon-stethoscope"></span>
-                      <p>
-                        <span className="number">143</span>{" "}
-                        <span>Open position</span>
-                      </p>
-                    </div>
+                </div>
+                <div className="col-md-2">
+                  <div className="top-category text-center">
+                    <h3>Job indeed  &amp; offers </h3>
+                    <span className="icon flaticon-stethoscope"></span>
+                    <p><span className="number">143</span> <span>Open jobs</span></p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
       </section>
 
       <section className="ftco-section">
@@ -407,7 +377,7 @@ const Home = () => {
           <div className="row justify-content-center mb-5">
             <div className="col-md-7 heading-section text-center ftco-animate">
               <span className="subheading">Job Categories</span>
-              <h2 className="mb-0">Top Categories</h2>
+              <h2 className="mb-0">Top jobs opportunities </h2>
             </div>
           </div>
           <div className="row">
@@ -569,7 +539,7 @@ const Home = () => {
                   <span className="flaticon-resume"></span>
                 </div>
                 <div className="media-body">
-                  <h3 className="heading mb-3">Search Millions of Jobs</h3>
+                <h3 className="heading mb-3">Search Job </h3>
                   <p>
                     A small river named Duden flows by their place and supplies.
                   </p>
@@ -582,7 +552,7 @@ const Home = () => {
                   <span className="flaticon-team"></span>
                 </div>
                 <div className="media-body">
-                  <h3 className="heading mb-3">Easy To Manage Jobs</h3>
+                <h3 className="heading mb-3"> Find Jobs opportunities</h3>
                   <p>
                     A small river named Duden flows by their place and supplies.
                   </p>
@@ -595,7 +565,7 @@ const Home = () => {
                   <span className="flaticon-career"></span>
                 </div>
                 <div className="media-body">
-                  <h3 className="heading mb-3">Top Careers</h3>
+                  <h3 className="heading mb-3">Top Online Careers</h3>
                   <p>
                     A small river named Duden flows by their place and supplies.
                   </p>
@@ -608,7 +578,7 @@ const Home = () => {
                   <span className="flaticon-employees"></span>
                 </div>
                 <div className="media-body">
-                  <h3 className="heading mb-3">Search Expert Candidates</h3>
+                  <h3 className="heading mb-3">Use Intelligent Chatbot</h3>
                   <p>
                     A small river named Duden flows by their place and supplies.
                   </p>
@@ -626,7 +596,7 @@ const Home = () => {
               <div className="row justify-content-center pb-3">
                 <div className="col-md-12 heading-section ftco-animate">
                   <span className="subheading">Recently Added Jobs</span>
-                  <h2 className="mb-4">Featured Jobs Posts For This Week</h2>
+                  <h2 className="mb-4">Apply job For This Week</h2>
                 </div>
               </div>
               <div className="row">
@@ -640,7 +610,7 @@ const Home = () => {
                       <div className="job-post-item-header align-items-center">
                         <span className="subadge">Freelance</span>
                         <h2 className="mr-3 text-black">
-                          <Link to="#">Open Source Interactive Developer</Link>
+                         Open Source Interactive Developer|create Resume
                         </h2>
                       </div>
                       <div className="job-post-item-body d-block d-md-flex">
@@ -680,7 +650,7 @@ const Home = () => {
                       <div className="job-post-item-header align-items-center">
                         <span className="subadge">Partime</span>
                         <h2 className="mr-3 text-black">
-                          <Link to="#">Frontend Development</Link>
+                          <Link to="#">Frontend Development|create Resume</Link>
                         </h2>
                       </div>
                       <div className="job-post-item-body d-block d-md-flex">
@@ -720,13 +690,13 @@ const Home = () => {
                       <div className="job-post-item-header align-items-center">
                         <span className="subadge">Temporary</span>
                         <h2 className="mr-3 text-black">
-                          <Link to="#">Open Source Interactive Developer</Link>
+                          Open Source Interactive Developer|create Resume
                         </h2>
                       </div>
                       <div className="job-post-item-body d-block d-md-flex">
                         <div className="mr-3">
                           <span className="icon-layers"></span>{" "}
-                          <Link to="#">New York Times</Link>
+                          New York Times
                         </div>
                         <div>
                           <span className="icon-my_location"></span>{" "}
@@ -760,7 +730,7 @@ const Home = () => {
                       <div className="job-post-item-header align-items-center">
                         <span className="subadge">Fulltime</span>
                         <h2 className="mr-3 text-black">
-                          <Link to="#">Full Stack Developer</Link>
+                          <Link to="#">Full Stack Developer|create Resume</Link>
                         </h2>
                       </div>
                       <div className="job-post-item-body d-block d-md-flex">
@@ -806,7 +776,7 @@ const Home = () => {
           <div className="row justify-content-center mb-4">
             <div className="col-md-7 text-center heading-section ftco-animate">
               <span className="subheading">Testimonial</span>
-              <h2 className="mb-4">Happy Clients</h2>
+              <h2 className="mb-4">Best skills test Candidates</h2>
             </div>
           </div>
           <div className="row ftco-animate">
@@ -927,8 +897,8 @@ const Home = () => {
         <div className="container">
           <div className="row justify-content-center pb-3">
             <div className="col-md-10 heading-section heading-section-white text-center ftco-animate">
-              <span className="subheading">Candidates</span>
-              <h2 className="mb-4">Latest Candidates</h2>
+              <span className="subheading"> HR virtual assistant</span>
+              <h2 className="mb-4"> HR virtual assistant</h2>
             </div>
           </div>
         </div>
@@ -942,7 +912,7 @@ const Home = () => {
                       className="img"
                       style={{ backgroundImage: `url(${person1})` }}
                     ></div>
-                    <h2>Danica Lewis</h2>
+                    <h2>Hr Danica Lewis</h2>
                     <span className="position">Western City, UK</span>
                   </Link>
                 </div>
@@ -952,7 +922,7 @@ const Home = () => {
                       className="img"
                       style={{ backgroundImage: `url(${person2})` }}
                     ></div>
-                    <h2>Nicole Simon</h2>
+                    <h2>Hr Nicole Simon</h2>
                     <span className="position">Western City, UK</span>
                   </Link>
                 </div>
@@ -962,7 +932,7 @@ const Home = () => {
                       className="img"
                       style={{ backgroundImage: `url(${person3})` }}
                     ></div>
-                    <h2>Cloe Meyer</h2>
+                    <h2> Hr Cloe Meyer</h2>
                     <span className="position">Western City, UK</span>
                   </Link>
                 </div>
@@ -972,7 +942,7 @@ const Home = () => {
                       className="img"
                       style={{ backgroundImage: `url(${person4})` }}
                     ></div>
-                    <h2>Rachel Clinton</h2>
+                    <h2>Hr Rachel Clinton</h2>
                     <span className="position">Western City, UK</span>
                   </Link>
                 </div>
@@ -982,7 +952,7 @@ const Home = () => {
                       className="img"
                       style={{ backgroundImage: `url(${person5})` }}
                     ></div>
-                    <h2>Dave Buff</h2>
+                    <h2>Hr Dave Buff</h2>
                     <span className="position">Western City, UK</span>
                   </Link>
                 </div>
@@ -992,7 +962,7 @@ const Home = () => {
                       className="img"
                       style={{ backgroundImage: `url(${person6})` }}
                     ></div>
-                    <h2>Dave Buff</h2>
+                    <h2>Hr Dave Buff</h2>
                     <span className="position">Western City, UK</span>
                   </Link>
                 </div>
@@ -1008,7 +978,7 @@ const Home = () => {
             <div className="col-md-7 heading-section text-center ftco-animate">
               <span className="subheading">Our Blog</span>
               <h2>
-                <span>Recent</span> Blog
+                <span>Recent</span> Jobs Opportunities
               </h2>
             </div>
           </div>
@@ -1034,12 +1004,8 @@ const Home = () => {
                       </Link>
                     </div>
                   </div>
-                  <h3 className="heading">
-                    <Link to="#">
-                      Even the all-powerful Pointing has no control about the
-                      blind texts
-                    </Link>
-                  </h3>
+                  <p >Even the all-powerful application for <strong> Search Job</strong> has no power to find
+                 <strong> Jobs Opportunities</strong> like our application did </p>
                 </div>
               </div>
             </div>
@@ -1064,12 +1030,8 @@ const Home = () => {
                       </Link>
                     </div>
                   </div>
-                  <h3 className="heading">
-                    <Link to="#">
-                      Even the all-powerful Pointing has no control about the
-                      blind texts
-                    </Link>
-                  </h3>
+                  <p >Even the all-powerful application for <strong> Search Job</strong> has no power to find
+                 <strong> Jobs Opportunities</strong> like our application did </p>
                 </div>
               </div>
             </div>
@@ -1094,12 +1056,8 @@ const Home = () => {
                       </Link>
                     </div>
                   </div>
-                  <h3 className="heading">
-                    <Link to="#">
-                      Even the all-powerful Pointing has no control about the
-                      blind texts
-                    </Link>
-                  </h3>
+                  <p >Even the all-powerful application for <strong> Search Job</strong> has no power to find
+                 <strong> Jobs Opportunities</strong> like our application did </p>
                 </div>
               </div>
             </div>
@@ -1124,12 +1082,8 @@ const Home = () => {
                       </Link>
                     </div>
                   </div>
-                  <h3 className="heading">
-                    <Link to="#">
-                      Even the all-powerful Pointing has no control about the
-                      blind texts
-                    </Link>
-                  </h3>
+                  <p >Even the all-powerful application for <strong> Search Job</strong> has no power to find
+                 <strong> Jobs Opportunities</strong> like our application did </p>
                 </div>
               </div>
             </div>
@@ -1137,7 +1091,7 @@ const Home = () => {
         </div>
       </section>
     </>
-  );
+    );
 };
 
 export default Home;

@@ -64,6 +64,8 @@ import Reclamations from "frontOffice/views/GReclamation/Reclamations";
 import calendar from "frontOffice/views/GCalendar/calendar";
 import chat from "frontOffice/views/Gchat/chat";
 
+import notfound from "frontOffice/views/notFound";
+
 if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
@@ -173,6 +175,9 @@ const App = () => {
                     exact
                     path="/PDF"
                     component={PDF}
+                  ></Route>
+                  <Route 
+                    component={notfound}
                   ></Route>
                   {/* Chatbot */}
                   <Route exact path="/Chatbot" component={Chatbot}></Route>
