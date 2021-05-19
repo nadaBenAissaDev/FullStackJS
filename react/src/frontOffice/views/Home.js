@@ -46,7 +46,8 @@ const Home = () => {
                         <strong>Apply job</strong>, take<strong> online test</strong> and <strong>create resume</strong>
                       </p>
                       <h1 className="mb-">
-                        The Eassiest Way to Find jobs Opportunities
+                        {/* The Eassiest Way to Find jobs Opportunities */}
+                        Hr Virtual Assistant Platform
                       </h1>
                       <div className="ftco-counter ftco-no-pt ftco-no-pb">
                         <div className="row">
@@ -377,7 +378,10 @@ const Home = () => {
           <div className="row justify-content-center mb-5">
             <div className="col-md-7 heading-section text-center ftco-animate">
               <span className="subheading">Job Categories</span>
-              <h2 className="mb-0">Top jobs opportunities </h2>
+              <h2 className="mb-0">
+                {/* Top jobs opportunities */}
+                Hr Virtual Assistants for
+               </h2>
             </div>
           </div>
           <div className="row">

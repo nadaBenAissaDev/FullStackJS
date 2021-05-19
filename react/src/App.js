@@ -176,14 +176,16 @@ const App = () => {
                     path="/PDF"
                     component={PDF}
                   ></Route>
+                
+                  {/* Chatbot */}
+                  <Route exact path="/Chatbot" component={Chatbot}></Route>
                   <Route 
                     component={notfound}
                   ></Route>
-                  {/* Chatbot */}
-                  <Route exact path="/Chatbot" component={Chatbot}></Route>
                   {localStorage.getItem("takeTest") === "true" &&
                                localStorage.getItem("times") === "1" && (
                                  <Route exact path="/take-test" component={Test} /> )}
+                 
                 </Switch>
               </div>
             </div>
